@@ -1,0 +1,10 @@
+.wrapLogo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imgLogo{
+  width: 25%;
+  height: 2.8vh;
+}

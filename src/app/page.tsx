@@ -2,13 +2,12 @@
 //components
 import { Header } from '@/components/header/Header';
 import { Footer } from '@/components/footer/Footer';
+import { Main } from '@/components/main/Main';
 
 export default function Home() {
-  return (
-  <div className='container'>
+  return (<>
     <Header/>
-    <main></main>
+    <Main/>
     <Footer/>
-  </div>
-  );
+  </>);
 };
