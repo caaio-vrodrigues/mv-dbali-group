@@ -1,12 +1,12 @@
 //data
-import { previewData } from "@/data/preview-data";
+import { paymentsData } from '@/data/payments-data';
 
 //styles
 import styles from './PaymentsCards.module.css';
 
 export const PaymentsCards = () => {
   return(<>
-    {previewData.map((data)=>{
+    {paymentsData.map((data)=>{
       return(
       <article key={data.id} className={styles.wrapArticle}>
         <h1>{data.title}</h1>

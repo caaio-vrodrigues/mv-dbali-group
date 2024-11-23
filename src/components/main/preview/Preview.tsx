@@ -1,5 +1,6 @@
 //components
 import { PaymentsCards } from './payments-cards/PaymentsCards';
+import { Works } from './works/Works';
 
 //styles
 import styles from './Preview.module.css';
@@ -11,6 +12,7 @@ export const Preview = () => {
         <PaymentsCards/>
       </section>
       <section className={`${styles.block}`}>
+        <Works/>
       </section>
     </div>
   );

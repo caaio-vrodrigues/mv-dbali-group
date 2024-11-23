@@ -1,4 +1,4 @@
-type TPreviewData = {
+type TPaymentsData = {
   id: number,
   title: string,
   msg: string,
@@ -6,7 +6,7 @@ type TPreviewData = {
   limitData: string
 }[];
 
-export const previewData:TPreviewData = [
+export const paymentsData:TPaymentsData = [
   {
     id: 0,
     title: 'Title 0',

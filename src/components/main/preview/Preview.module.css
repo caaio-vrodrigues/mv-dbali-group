@@ -12,7 +12,27 @@
 .block{
   border: 1px solid black;
   width: 49%;
+  overflow-y: scroll;
+  max-height: 500px;
 }
+
+.block::-webkit-scrollbar {
+  width: 5px; /* Largura da barra de rolagem */
+}
+
+.block::-webkit-scrollbar-track {
+  background: #403d3d; /* Fundo da barra */
+}
+
+.block::-webkit-scrollbar-thumb {
+  background: #888; /* Cor do controle da barra */
+  border-radius: 10px;
+}
+
+.block::-webkit-scrollbar-thumb:hover {
+  background: #9c9595; /* Cor ao passar o mouse */
+}
+
 
 .blockLeft{
   display: flex;
