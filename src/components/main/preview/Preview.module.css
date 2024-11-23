@@ -1,0 +1,21 @@
+.wrap{
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  width: 95%;
+  height: fit-content;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  padding: 1%;
+}
+
+.block{
+  border: 1px solid black;
+  width: 49%;
+}
+
+.blockLeft{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
