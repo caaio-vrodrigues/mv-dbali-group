@@ -6,6 +6,9 @@
   justify-content: center;
   align-items: center;
   background-color: rgb(237, 191, 31);
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.227);
 }
 
 .headerBlocks{

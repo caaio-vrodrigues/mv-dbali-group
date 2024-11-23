@@ -9,8 +9,16 @@ import styles from '../logo/Logo.module.css';
 export const Logo = () => {
   return (
     <div className={styles.wrapLogo}>
-      <Image className={styles.imgLogo} src={logoMV} alt="Logo MV"/>
-      <Image className={styles.imgLogo} src={logoDbali} alt="Logo D'Bali"/>
+      <Image 
+        className={`${styles.imgLogo} ${styles.logoMV}`} 
+        src={logoMV} 
+        alt="Logo MV"
+      />
+      <Image 
+        className={`${styles.imgLogo} ${styles.logoDBali}`} 
+        src={logoDbali} 
+        alt="Logo D'Bali"
+      />
     </div>
   );
 };

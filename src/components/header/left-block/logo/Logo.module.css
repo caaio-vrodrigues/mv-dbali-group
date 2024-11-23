@@ -1,0 +1,30 @@
+.wrapLogo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 1px 0.1px 3px 0.1px;
+  width: 20%;
+  min-width: 140px;
+  height: 3.2vh;
+  min-height: 65px;
+  margin-right: auto;
+  border-radius: 8px;
+  margin: 0;
+}
+
+.imgLogo{
+  width: 20%;
+  min-width: 140px;
+  height: 50%;
+  min-height: 20px;
+}
+
+.logoMV{
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.logoDBali{
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
