@@ -16,8 +16,16 @@ export const PaymentsCards = () => {
           <p>{data.value}</p>
         </div>
         <div>
-          <h2>Data limite para pagamento</h2>
-          <p>{data.limitData}</p>
+          {data.endPeriod && data.startPeriod ? 
+            <div>
+              <h2>Período dos Vencimentos</h2>
+              <p>{`${data.startPeriod} -> ${data.endPeriod}`}</p>
+            </div> 
+            : 
+            <div>
+              <h2>Vencimento</h2>
+              <p>{data.startPeriod}</p>
+            </div>}
         </div>
       </article>
       )

@@ -11,7 +11,7 @@ export const Preview = () => {
       <section className={`${styles.block} ${styles.blockLeft}`}>
         <PaymentsCards/>
       </section>
-      <section className={`${styles.block}`}>
+      <section className={`${styles.block} ${styles.blockRight}`}>
         <Works/>
       </section>
     </div>

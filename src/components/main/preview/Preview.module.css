@@ -12,8 +12,7 @@
 .block{
   border: 1px solid black;
   width: 49%;
-  overflow-y: scroll;
-  max-height: 500px;
+  max-height: 700px;
 }
 
 .block::-webkit-scrollbar {
@@ -33,9 +32,13 @@
   background: #9c9595; /* Cor ao passar o mouse */
 }
 
-
 .blockLeft{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  height: 800px;
+}
+
+.blockRight{
+  overflow-y: scroll;
 }
