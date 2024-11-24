@@ -1,7 +1,6 @@
 type TPaymentsData = {
   id: number,
   title: string,
-  msg: string,
   value: number,
   startPeriod: string,
   endPeriod?: string
@@ -10,31 +9,41 @@ type TPaymentsData = {
 export const paymentsData:TPaymentsData = [
   {
     id: 0,
-    title: 'Title 0',
-    msg: 'Mensagem referente ao valor que deverá ser pago até a data referenciada',
-    value: 0.00,
+    title: 'HOJE',
+    value: 15082.40,
     startPeriod: '0/00/000',
   },
   {
     id: 1,
-    title: 'Title 0',
-    msg: 'Mensagem referente ao valor que deverá ser pago até a data referenciada',
-    value: 0.00,
+    title: 'AMANHÃ',
+    value: 24894.33,
     startPeriod: '0/00/000',
   },
   {
     id: 2,
-    title: 'Title 0',
-    msg: 'Mensagem referente ao valor que deverá ser pago até a data referenciada',
-    value: 0.00,
+    title: 'SEMANA',
+    value: 184811.25,
     startPeriod: '0/00/000',
     endPeriod: '0/00/00'
   },
   {
     id: 3,
-    title: 'Title 0',
-    msg: 'Mensagem referente ao valor que deverá ser pago até a data referenciada',
-    value: 0.00,
+    title: 'PRÓXIMA SEMANA',
+    value: 355912.81,
+    startPeriod: '0/00/000',
+    endPeriod: '0/00/00'
+  },
+  {
+    id: 4,
+    title: 'QUINZENA',
+    value: 184811.25,
+    startPeriod: '0/00/000',
+    endPeriod: '0/00/00'
+  },
+  {
+    id: 5,
+    title: 'MÊS',
+    value: 355912.81,
     startPeriod: '0/00/000',
     endPeriod: '0/00/00'
   }

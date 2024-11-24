@@ -1,7 +1,7 @@
 //img
 import Image from 'next/image';
 
-//icon
+//img-icon
 import logoutIcon from '@/icon/logout.png';
 import accountManage from '@/icon/account-manage.png';
 import menuBurg from '@/icon/menu-burg.png';

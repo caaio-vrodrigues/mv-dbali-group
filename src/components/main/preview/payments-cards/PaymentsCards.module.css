@@ -1,5 +1,32 @@
 .wrapArticle{
-  border: 1px solid black;
-  width: 45%;
+  background-color: white;
+  border-radius: 10px;
+  width: 25%;
   margin: 2%;
+  padding: 2%;
+}
+
+.wrapArticle h1{
+  font-size: var(--fontSize-h1);
+}
+
+.wrapArticle h2{
+  font-size: var(--fontSize-h2);
+}
+
+.wrapTotal{
+  margin-top: 14%;
+  margin-bottom: 10%;
+}
+
+.wrapPeriods{
+  display: flex;
+  align-items: center;
+}
+
+.arrowForwIcon{
+  width: 30px;
+  height: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
