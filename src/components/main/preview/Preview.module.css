@@ -4,17 +4,15 @@
   background-color: var(--primaryColor);
   width: 94%;
   margin-top: 1%;
-  margin-bottom: 3%;
   padding: 2%;
   border-radius: 15px;
-  min-height: 67vh;
+  box-shadow: var(--boxShadow);
+  min-height: 70vh;
 }
 
 .block{
-  background-color: rgb(46, 45, 38);
   border-radius: 10px;
-  padding: 1%;
-  max-height: 44vh;
+  max-height: 40vh;
 }
 
 .block::-webkit-scrollbar {
@@ -27,7 +25,7 @@
 }
 
 .block::-webkit-scrollbar-thumb {
-  background: white; /* Cor do controle da barra */
+  background: rgb(176, 176, 181); /* Cor do controle da barra */
   border-radius: 15px;
 }
 
@@ -38,11 +36,36 @@
 .blockLeft{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 55%;
 }
 
 .blockRight{
   overflow-y: scroll;
   width: 35%;
+  background-color: rgb(77, 76, 82);
+  height: fit-content;
+  box-shadow: var(--boxShadow);
+}
+
+.aFloatLeft{
+  position: absolute;
+  margin: 0.3rem;
+  margin-top: 0.1rem;
+  cursor: pointer;
+  background-color: #00000000;
+  border: none;
+  display: inline;
+}
+
+.aFloatLeftLeft{
+}
+
+.aFloatLeftRight{
+  color: white;
+  background-color: #000000;
+  margin-top: 0.3rem;
+  margin-left: 0.3rem;
+  padding: 0.3rem;
+  border-radius: 5px;
 }

@@ -4,6 +4,7 @@
   margin-bottom: 4%;
   border-radius: 10px;
   padding: 2%;
+  margin-top: 4%;
 }
 
 .wrapArticle h1{
@@ -13,4 +14,8 @@
 
 .wrapArticle h2{
   font-size: var(--fontSize-h2);
+}
+
+.wrapArticle p{
+  font-size: var(--pSize);
 }

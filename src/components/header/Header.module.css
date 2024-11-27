@@ -1,7 +1,5 @@
 .header{
   text-align: center;
-  max-height: 6vh;
-  min-height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,6 +7,9 @@
   padding-left: 10px;
   padding-right: 10px;
   border: 1px solid rgba(0, 0, 0, 0.227);
+  /* height: 3.6vh; */
+  max-height: 3.7rem;
+  min-height: 3.7rem;
 }
 
 .headerBlocks{

@@ -2,21 +2,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 1px 0.1px 3px 0.1px;
-  width: 20%;
-  min-width: 140px;
-  height: 3.2vh;
-  min-height: 65px;
+  box-shadow: var(--boxShadow);
+  width: 6rem;
+  height: 3.5vh;
+  min-height: 2.7rem;
   margin-right: auto;
   border-radius: 8px;
   margin: 0;
 }
 
 .imgLogo{
-  width: 20%;
-  min-width: 140px;
+  width: 100%;
   height: 50%;
-  min-height: 20px;
 }
 
 .logoMV{
