@@ -7,7 +7,7 @@
   padding: 2%;
   border-radius: 15px;
   box-shadow: var(--boxShadow);
-  min-height: 70vh;
+  min-height: 63vh;
 }
 
 .block{
@@ -48,24 +48,36 @@
   box-shadow: var(--boxShadow);
 }
 
-.aFloatLeft{
+.aFloat{
+  float: left;
   position: absolute;
   margin: 0.3rem;
   margin-top: 0.1rem;
   cursor: pointer;
   background-color: #00000000;
   border: none;
-  display: inline;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.aFloatLeftLeft{
+.aFloat:hover{
+  color: rgb(60, 133, 133);
 }
 
-.aFloatLeftRight{
+.aFloatWorks{
+  font-size: 0.8rem;
   color: white;
   background-color: #000000;
   margin-top: 0.3rem;
   margin-left: 0.3rem;
-  padding: 0.3rem;
+  padding: 0.2rem;
   border-radius: 5px;
+}
+
+.arrowIcon{
+  height: 0.7rem;
+  width: 1.3rem;
+  margin: 0;
+  padding: 0;
 }

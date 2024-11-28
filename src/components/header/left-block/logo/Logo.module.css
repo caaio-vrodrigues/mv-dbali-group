@@ -1,7 +1,6 @@
 .wrapLogo{
   display: flex;
   flex-direction: column;
-  align-items: center;
   box-shadow: var(--boxShadow);
   width: 6rem;
   height: 3.5vh;
