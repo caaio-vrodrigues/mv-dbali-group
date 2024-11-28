@@ -21,7 +21,7 @@ import ContextMaster from '@/context/ContextProvider';
 export const Preview = () => {
   const { data } = useContext(ContextMaster);
   console.log(data);
-  
+
   return(
     <div className={`${styles.wrap}`}>
       <section className={`${styles.block} ${styles.blockLeft}`}>
