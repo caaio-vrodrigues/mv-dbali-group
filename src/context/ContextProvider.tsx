@@ -8,13 +8,37 @@ type TContextMasterProvider = {
 };
 
 type TContextMaster = {
-  data: any
-  setData: (data: any) => any
+  data: null | [{
+    doc: string,
+    doc_id: number,
+    forma_pagamento: string,
+    fornecedor: string,
+    id: number,
+    obra: string,
+    observacao: string,
+    parcela_atual: number,
+    parcelas_totais: number,
+    situacao_pagamento: string,
+    valor: number,
+  }];
+  setData: React.Dispatch<React.SetStateAction<null | [{
+    doc: string,
+    doc_id: number,
+    forma_pagamento: string,
+    fornecedor: string,
+    id: number,
+    obra: string,
+    observacao: string,
+    parcela_atual: number,
+    parcelas_totais: number,
+    situacao_pagamento: string,
+    valor: number,
+  }]>>;
 };
 
 const ContextMaster = createContext<TContextMaster>({
   data: null,
-  setData(){},
+  setData: ()=>{}
 });
 
 export default ContextMaster;
@@ -22,7 +46,19 @@ export default ContextMaster;
 export function ContextMasterProvider({ 
   children 
 }: TContextMasterProvider): React.ReactNode {
-  const [data, setData] = useState<any>(null);
+  const [data, setData] = useState<null | [{
+    doc: string,
+    doc_id: number,
+    forma_pagamento: string,
+    fornecedor: string,
+    id: number,
+    obra: string,
+    observacao: string,
+    parcela_atual: number,
+    parcelas_totais: number,
+    situacao_pagamento: string,
+    valor: number,
+  }]>(null);
 
   useEffect(() => {
     const getData = async () => {
@@ -51,63 +87,3 @@ export function ContextMasterProvider({
     </ContextMaster.Provider>
   );
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//////////////////////////////
-
-// import { error } from "console";
-
-// //native
-// import React, { createContext, useState, useContext, useEffect } from "react"
-
-// // type TContexProvider = {
-// //   children: React.ReactNode
-// // };
-
-// const ContextMaster = createContext();
-
-// export const ContextProvider = ({ children }) => {
-//   const [data, setData] = useState();
-
-//   useEffect(() => {
-//     const getData = async () => {
-//       try{
-//         const response = await fetch('http://localhost:3000/dados');
-//         if(!response.ok){
-//           throw new Error('Falhar ao carregar os dados...');
-//         };
-
-//         const data = await response.json();
-//         setData(data);
-//       }catch{
-//         console.error('Erro ao acessar os dados: ', error);
-//       };
-//     }
-//     getData();
-//   }, []);
-
-//   return(
-//     <ContextMaster.Provider value={data}>
-//       {children}
-//     </ContextMaster.Provider>
-//   )
-// };
-
-// export const useContextProvider = () => {
-//   return useContext(ContextMaster);
-// };
