@@ -1,9 +1,11 @@
+'use client'
 import React from 'react';
 import { queryTest } from '@/data/query/queryTest';
 
 const InsertDataComponent = () => {
   const handleInsertData = async () => {
     const query = queryTest();
+    console.log(query)
 
     try {
       const response = await fetch('http://localhost:3001/insert-dados', {

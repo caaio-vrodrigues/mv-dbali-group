@@ -3,6 +3,7 @@
 //components
 import { PaymentsCards } from './payments-cards/PaymentsCards';
 import { Works } from './works/Works';
+import InsertDataComponent from '@/data/query/InsertDataComponent';
 
 //image
 import Image from 'next/image';
@@ -44,6 +45,7 @@ export const Preview = () => {
         </a>
         <Works/>
       </section>
+      <InsertDataComponent/>
     </div>
   );
 };

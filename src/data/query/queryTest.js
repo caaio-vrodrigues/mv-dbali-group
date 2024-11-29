@@ -1,31 +1,41 @@
-const fornecedores = [
-  "Fornecedor A", "Fornecedor B", "Fornecedor C", 
-  "Fornecedor D", "Fornecedor E", "Fornecedor F", 
-  "Fornecedor G", "Fornecedor H", "Fornecedor I", 
-  "Fornecedor J", "Fornecedor K", "Fornecedor L", 
-  "Fornecedor M", "Fornecedor N", "Fornecedor O", 
-  "Fornecedor P", "Fornecedor Q", "Fornecedor R", 
-  "Fornecedor S", "Fornecedor T", "Fornecedor U", 
-  "Fornecedor V", "Fornecedor W", "Fornecedor X", 
-  "Fornecedor Y", "Fornecedor Z"
-];
-
-// Função para gerar a query de inserção
-export const queryTest = () => {
-  let query = "INSERT INTO tbl_test_2 (data, valor, fornecedor) VALUES";
-  const ano = 2024;
-  const valores = [];
-
-  for (let mes = 0; mes < 12; mes++) {
-    for (let dia = 1; dia <= 31; dia++) {
-      const data = new Date(ano, mes, dia);
-      if (data.getFullYear() === ano && data.getMonth() === mes) {
-        const fornecedor = fornecedores[Math.floor(Math.random() * fornecedores.length)];
-        valores.push(`('${data.toISOString().split('T')[0]}', 1.00, '${fornecedor}')`);
-      };
-    };
+export const queryTest = async () => {
+  const gerarValores = () => {
+    const totalMeses = 12;
+    const diasPorMes = 30;
+    const valores = [];
+  
+    for (let mes = 0; mes < totalMeses; mes++) {
+      for (let dia = 0; dia < diasPorMes; dia++) {
+        const fornecedor = `Fornecedor${mes * diasPorMes + dia + 1}`;
+        const valor = 1.00;
+        const situacao = (dia % 2 === 0) ? 'pago' : 'aberto';
+        valores.push([fornecedor, valor, situacao]);
+      }
+    }
+    return valores;
   };
 
-  query += valores.join(", ") + ";";
-  return query;
+  const query = 'INSERT INTO test_tbl (fornecedor, valor, situacao) VALUES ?';
+  const valores = gerarValores();
+  console.log(valores);
+  console.log(query)
+
+  try {
+    const response = await fetch('http://localhost:3001/insert-dados', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ query, valores }),
+    });
+
+    const result = await response.json();
+    if (response.ok) {
+      console.log('Dados inseridos com sucesso!', result);
+    } else {
+      console.error('Erro ao inserir dados:', result.message);
+    }
+  } catch (error) {
+    console.error('Erro na requisição:', error);
+  }
 };

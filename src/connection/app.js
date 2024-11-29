@@ -16,7 +16,7 @@ app.use(cors()); // Usar CORS para permitir requisições de diferentes origens
 app.use(bodyParser.json()); // Para analisar JSON no corpo das requisições
 
 // Criando um pool de conexões para melhor gerenciamento
-const pool = mySQL.createPool({
+export const pool = mySQL.createPool({
   host: 'localhost',
   user: 'root',
   password: '',
@@ -25,9 +25,17 @@ const pool = mySQL.createPool({
 
 // Rota para inserir dados
 app.post('/insert-dados', (req, res) => {
-  const { query } = req.body;
+  console.log('requisição recebida');
+  console.log(req.body);
 
-  pool.query(query, (err, results) => {
+  const { query, valores } = req.body;
+
+  if (!query || !valores) {
+    return res.status(400).json({ message: 'Mensagem não vem daqui...' });
+    
+  }
+
+  pool.query(query, [valores], (err, results) => {
     if (err) {
       console.error('Erro ao inserir dados:', err);
       return res.status(500).json({ message: 'Erro ao inserir dados.' });
@@ -36,9 +44,11 @@ app.post('/insert-dados', (req, res) => {
   });
 });
 
+
+
 // Rota para obter dados
 app.get('/dados', (req, res) => {
-  pool.query('SELECT * FROM tbl_test_2', (err, results) => {
+  pool.query('SELECT * FROM test_tbl', (err, results) => {
     if (err) {
       console.error('Erro ao acessar os dados:', err);
       return res.status(500).json({ message: 'Erro ao acessar os dados.' });
