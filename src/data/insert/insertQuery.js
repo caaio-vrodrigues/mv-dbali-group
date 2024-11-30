@@ -1,4 +1,4 @@
-export const queryTest = async () => {
+export const insertQuery = async () => {
   const gerarValores = () => {
     const totalMeses = 12;
     const diasPorMes = 30;
@@ -20,5 +20,3 @@ export const queryTest = async () => {
 
   return{query, valores};
 };
-
-//CRIAR UPDATE

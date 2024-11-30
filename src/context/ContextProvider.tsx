@@ -1,14 +1,14 @@
 'use client';
 
 // Native
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState } from 'react';
 
 type TContextMasterProvider = {
   children: React.ReactNode
 };
 
 type TContextMaster = {
-  data: null | [{
+  dataTblFluxoPagamentos: null | [{
     doc: string,
     doc_id: number,
     forma_pagamento: string,
@@ -21,7 +21,14 @@ type TContextMaster = {
     situacao_pagamento: string,
     valor: number,
   }];
-  setData: React.Dispatch<React.SetStateAction<null | [{
+  dataTblTest: null | [{
+    id: number,
+    fornecedor: string,
+    valor: number,
+    situacao: string,
+    data: Date,
+  }];
+  setDataTblFluxoPagamentos: React.Dispatch<React.SetStateAction<null | [{
     doc: string,
     doc_id: number,
     forma_pagamento: string,
@@ -34,11 +41,20 @@ type TContextMaster = {
     situacao_pagamento: string,
     valor: number,
   }]>>;
+  setDataTblTest: React.Dispatch<React.SetStateAction<null | [{
+    id: number,
+    fornecedor: string,
+    valor: number,
+    situacao: string,
+    data: Date,
+  }]>>;
 };
 
 const ContextMaster = createContext<TContextMaster>({
-  data: null,
-  setData: ()=>{}
+  dataTblFluxoPagamentos: null,
+  setDataTblFluxoPagamentos: () => {},
+  dataTblTest: null,
+  setDataTblTest: () => {},
 });
 
 export default ContextMaster;
@@ -46,7 +62,8 @@ export default ContextMaster;
 export function ContextMasterProvider({ 
   children 
 }: TContextMasterProvider): React.ReactNode {
-  const [data, setData] = useState<null | [{
+  
+  const [dataTblFluxoPagamentos, setDataTblFluxoPagamentos] = useState<null | [{
     doc: string,
     doc_id: number,
     forma_pagamento: string,
@@ -60,28 +77,17 @@ export function ContextMasterProvider({
     valor: number,
   }]>(null);
 
-  useEffect(() => {
-    const getData = async () => {
-      try{
-        const response = await fetch('http://localhost:3001/dados');
-        console.log(response);
-        if(!response.ok){
-          throw new Error('Falha ao carregar os dados...');
-        };
-
-        const data = await response.json();
-        setData(data);
-      }catch(error){
-        console.error('Falha ao buscar os dados: ', error);
-      };
-    };
-
-    getData();
-  }, []);
+  const [dataTblTest, setDataTblTest] = useState<null | [{
+    id: number,
+    fornecedor: string,
+    valor: number,
+    situacao: string,
+    data: Date,
+  }]>(null);
 
   return (
     <ContextMaster.Provider value={{
-      data, setData
+      dataTblFluxoPagamentos, setDataTblFluxoPagamentos, dataTblTest, setDataTblTest
     }}>
       {children}
     </ContextMaster.Provider>

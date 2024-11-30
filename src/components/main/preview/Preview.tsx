@@ -3,7 +3,9 @@
 //components
 import { PaymentsCards } from './payments-cards/PaymentsCards';
 import { Works } from './works/Works';
-import { InsertDataComponent } from '@/data/query/InsertDataComponent';
+// import { InsertDataComponent } from '@/data/insert/InsertDataComponent';
+// import { UpdateDataComponent } from '@/data/update/UpdateDataComponent';
+import { GetDataComponent } from '@/data/get/GetDataComponent';
 
 //image
 import Image from 'next/image';
@@ -20,8 +22,8 @@ import React, { useContext } from 'react';
 import ContextMaster from '@/context/ContextProvider';
 
 export const Preview = () => {
-  const { data } = useContext(ContextMaster);
-  console.log(data);
+  const { dataTblFluxoPagamentos } = useContext(ContextMaster);
+  console.log(dataTblFluxoPagamentos);
 
   return(
     <div className={`${styles.wrap}`}>
@@ -45,7 +47,9 @@ export const Preview = () => {
         </a>
         <Works/>
       </section>
-      <InsertDataComponent/>
+      {/* <InsertDataComponent/> */}
+      {/* <UpdateDataComponent/> */}
+      <GetDataComponent/>
     </div>
   );
 };

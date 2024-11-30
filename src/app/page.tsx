@@ -18,3 +18,5 @@ export default function Home() {
 //   valor FLOAT,
 //   situacao VARCHAR(255)
 // );
+
+// ALTER TABLE test_tbl ADD COLUMN data DATE;

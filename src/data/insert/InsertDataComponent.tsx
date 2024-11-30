@@ -1,10 +1,10 @@
 import React from 'react';
-import { executeInsert } from '@/data/executeInsert';
-import { queryTest } from '@/data/query/queryTest';
+import { executeInsert } from '@/data/insert/executeInsert';
+import { insertQuery } from '@/data/insert/insertQuery';
 
 export const InsertDataComponent = () => {
   const handleInsertData = async () => {
-    const getQuery = queryTest();
+    const getQuery = insertQuery();
     await executeInsert((await getQuery).query, (await getQuery).valores);
     //Aqui você pode adicionar um feedback ao usuário após a inserção
   };

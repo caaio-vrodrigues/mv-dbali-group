@@ -1,6 +1,6 @@
 export const executeInsert = async (query, valores) => {
-  try {
-    const response = await fetch('http://localhost:3001/insert-dados', {
+  try{
+    const response = await fetch('http://localhost:3001/insert-dados',{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -9,12 +9,14 @@ export const executeInsert = async (query, valores) => {
     });
 
     const result = await response.json();
-    if (response.ok) {
+
+    if(response.ok){
       console.log('Dados inseridos com sucesso!', result);
-    } else {
+    }else{
       console.error('Erro ao inserir dados:', result.message);
-    }
-  } catch (error) {
+    };
+    
+  }catch(error){
     console.error('Erro na requisição:', error);
-  }
-}
+  };
+};
