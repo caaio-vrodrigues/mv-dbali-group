@@ -1,32 +1,12 @@
-'use client'
 import React from 'react';
+import { executeInsert } from '@/data/executeInsert';
 import { queryTest } from '@/data/query/queryTest';
 
-const InsertDataComponent = () => {
+export const InsertDataComponent = () => {
   const handleInsertData = async () => {
-    const query = queryTest();
-    console.log(query)
-
-    try {
-      const response = await fetch('http://localhost:3001/insert-dados', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ query }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        alert(data.message);
-      } else {
-        alert(`Erro: ${data.message}`);
-      }
-    } catch (error) {
-      console.error('Erro ao fazer a requisição:', error);
-      alert('Erro ao inserir dados.');
-    }
+    const getQuery = queryTest();
+    await executeInsert((await getQuery).query, (await getQuery).valores);
+    //Aqui você pode adicionar um feedback ao usuário após a inserção
   };
 
   return (
@@ -36,5 +16,3 @@ const InsertDataComponent = () => {
     </div>
   );
 };
-
-export default InsertDataComponent;
