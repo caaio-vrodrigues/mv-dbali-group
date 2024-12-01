@@ -1,5 +1,6 @@
 .wrap{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   background-color: var(--primaryColor);
   width: 94%;
@@ -48,31 +49,25 @@
   box-shadow: var(--boxShadow);
 }
 
-.aFloat{
+.buttonFloat{
   float: left;
   position: absolute;
-  margin: 0.3rem;
   margin-top: 0.1rem;
   cursor: pointer;
-  background-color: #00000000;
   border: none;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-}
-
-.aFloat:hover{
-  color: rgb(60, 133, 133);
-}
-
-.aFloatWorks{
   font-size: 0.8rem;
   color: white;
   background-color: #000000;
-  margin-top: 0.3rem;
-  margin-left: 0.3rem;
-  padding: 0.2rem;
   border-radius: 5px;
+  margin-left: 0.1vw;
+  padding: 0.2rem;
+}
+
+.buttonFloat:hover{
+  color: rgb(191, 255, 0);
 }
 
 .arrowIcon{
@@ -80,4 +75,52 @@
   width: 1.3rem;
   margin: 0;
   padding: 0;
+}
+
+@media screen and (max-width: 1044px){
+  .blockLeft{
+    width: 48%;
+    overflow-y: scroll;
+    background-color: rgb(77, 76, 82);
+    height: fit-content;
+    box-shadow: var(--boxShadow);
+  }
+
+  .blockRight{
+    width: 48%;
+  }
+}
+
+@media screen and (max-width: 744px){
+  .blockLeft{
+    width: 18%;
+    min-width: 12rem;
+    margin-right: 1rem;
+  }
+
+  .blockRight{
+    width: 65%;
+  }
+}
+
+@media screen and (max-width: 650px){
+  .block{
+    width: 90%;
+    margin: 0;
+    margin-bottom: 2vh;
+  }
+
+  .blockLeft{
+    flex-wrap: nowrap;
+    overflow-y: scroll;
+  }
+
+  .blockLeft::-webkit-scrollbar {
+    width: none;
+    height: 0.5rem;
+  }
+
+  .blockRight{
+    
+  }
 }

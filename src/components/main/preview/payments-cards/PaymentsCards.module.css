@@ -3,10 +3,10 @@
   border-radius: 10px;
   box-shadow: var(--boxShadow);
   width: 25%;
+  min-height: 14vh;
   min-width: 9rem;
   padding: 2%;
-  margin: 0.3rem;
-  margin-top: 2.5vh;
+  margin-top: auto;
 }
 
 .wrapArticle h1{
@@ -36,4 +36,25 @@
   height: 10px;
   margin-left: 5px;
   margin-right: 5px;
+}
+
+@media screen and (max-width: 1044px){
+  .wrapArticle{
+    margin-inline: auto;
+    width: 40%;
+    margin-top: 2.2vh;
+  }
+}
+
+@media screen and (max-width: 745px){
+  .wrapArticle{
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 650px){
+  .wrapArticle{
+    margin-left: 2vw;
+    margin-bottom: 1vh;
+  }
 }
