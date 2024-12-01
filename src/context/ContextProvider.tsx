@@ -1,95 +1,64 @@
-'use client';
+'use client'
 
-// Native
+// src/context/ContextProvider.tsx
 import React, { createContext, useState } from 'react';
 
+// Define a interface para os registros de fluxo de pagamentos
+interface IFluxoPagamentos {
+  doc: string;
+  doc_id: number;
+  forma_pagamento: string;
+  fornecedor: string;
+  id: number;
+  obra: string;
+  observacao: string;
+  parcela_atual: number;
+  parcelas_totais: number;
+  situacao_pagamento: string;
+  valor: number;
+}
+
+// Define a interface para os registros de teste
+interface ITestData {
+  id: number;
+  fornecedor: string;
+  valor: number;
+  situacao: string;
+  data: Date; // Pode ser string, dependendo de como você manipula datas
+}
+
 type TContextMasterProvider = {
-  children: React.ReactNode
+  children: React.ReactNode;
 };
 
 type TContextMaster = {
-  dataTblFluxoPagamentos: null | [{
-    doc: string,
-    doc_id: number,
-    forma_pagamento: string,
-    fornecedor: string,
-    id: number,
-    obra: string,
-    observacao: string,
-    parcela_atual: number,
-    parcelas_totais: number,
-    situacao_pagamento: string,
-    valor: number,
-  }];
-  dataTblTest: null | [{
-    id: number,
-    fornecedor: string,
-    valor: number,
-    situacao: string,
-    data: Date,
-  }];
-  setDataTblFluxoPagamentos: React.Dispatch<React.SetStateAction<null | [{
-    doc: string,
-    doc_id: number,
-    forma_pagamento: string,
-    fornecedor: string,
-    id: number,
-    obra: string,
-    observacao: string,
-    parcela_atual: number,
-    parcelas_totais: number,
-    situacao_pagamento: string,
-    valor: number,
-  }]>>;
-  setDataTblTest: React.Dispatch<React.SetStateAction<null | [{
-    id: number,
-    fornecedor: string,
-    valor: number,
-    situacao: string,
-    data: Date,
-  }]>>;
+  dataTblFluxoPagamentos: IFluxoPagamentos[] | null;
+  dataTblTest: ITestData[] | null;
+  setDataTblFluxoPagamentos: React.Dispatch<React.SetStateAction<IFluxoPagamentos[] | null>>;
+  setDataTblTest: React.Dispatch<React.SetStateAction<ITestData[] | null>>;
 };
 
 const ContextMaster = createContext<TContextMaster>({
   dataTblFluxoPagamentos: null,
-  setDataTblFluxoPagamentos: () => {},
   dataTblTest: null,
+  setDataTblFluxoPagamentos: () => {},
   setDataTblTest: () => {},
 });
 
 export default ContextMaster;
 
-export function ContextMasterProvider({ 
-  children 
-}: TContextMasterProvider): React.ReactNode {
-  
-  const [dataTblFluxoPagamentos, setDataTblFluxoPagamentos] = useState<null | [{
-    doc: string,
-    doc_id: number,
-    forma_pagamento: string,
-    fornecedor: string,
-    id: number,
-    obra: string,
-    observacao: string,
-    parcela_atual: number,
-    parcelas_totais: number,
-    situacao_pagamento: string,
-    valor: number,
-  }]>(null);
-
-  const [dataTblTest, setDataTblTest] = useState<null | [{
-    id: number,
-    fornecedor: string,
-    valor: number,
-    situacao: string,
-    data: Date,
-  }]>(null);
+export function ContextMasterProvider({ children }: TContextMasterProvider): React.ReactNode {
+  const [dataTblFluxoPagamentos, setDataTblFluxoPagamentos] = useState<IFluxoPagamentos[] | null>(null);
+  const [dataTblTest, setDataTblTest] = useState<ITestData[] | null>(null);
 
   return (
     <ContextMaster.Provider value={{
-      dataTblFluxoPagamentos, setDataTblFluxoPagamentos, dataTblTest, setDataTblTest
+      dataTblFluxoPagamentos,
+      setDataTblFluxoPagamentos,
+      dataTblTest,
+      setDataTblTest
     }}>
       {children}
     </ContextMaster.Provider>
   );
-};
+}

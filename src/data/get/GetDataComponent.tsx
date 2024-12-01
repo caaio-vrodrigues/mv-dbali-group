@@ -1,44 +1,80 @@
-'use client';
+'use client'
 
 // src/data/get/GetDataComponent.tsx
-import React, { useContext, useCallback } from 'react';
+import React, { useContext, useCallback, useMemo } from 'react';
 import { executeGet } from '@/data/get/executeGet';
-import ContextMaster from '@/context/ContextProvider'; // Importando o contexto
+import ContextMaster from '@/context/ContextProvider';
+
+//cálculos
+import { calcPorDia } from '@/data/get/calcPorDia';
 import { calcQuinzenal } from './calcQuinzenal';
+import { calcMensal } from '@/data/get/calcMensal';
+import { calcAnual } from '@/data/get/calcAnual';
 
-export const GetDataComponent = () => {
-  const { dataTblTest, setDataTblTest } = useContext(ContextMaster); // Obtendo a função do contexto
-  const [loading, setLoading] = React.useState(false); // Estado para controle de loading
+type TGetDatComp = {
+  arrCalcDia: {
+    dia: number,
+    mes: number,
+    ano: number,
+  }[],
+};
 
-  console.log("Dados recebidos:", dataTblTest); // Registro dos dados recebidos
+export const GetDataComponent = ({ arrCalcDia }: TGetDatComp) => {
+  const { dataTblTest, setDataTblTest } = useContext(ContextMaster);
+  const [loading, setLoading] = React.useState(false);
 
-  // Verifique a estrutura de dataTblTest e calcule as quinzenas
-  const quinzenaResult = Array.isArray(dataTblTest) && dataTblTest.length > 0 ? 
-    calcQuinzenal(dataTblTest) : [];
-    
-  console.log("Resultados das Quinzenas:", quinzenaResult); // Exibir resultados formatados
+  // Calcula baseado nos parâmetros dinâmicos
+  const diasResult = useMemo(() => {
+  return Array.isArray(dataTblTest) && dataTblTest.length > 0 
+    ? calcPorDia(dataTblTest, arrCalcDia) 
+    : [{ totalAberto: 0 }]; // Valor padrão se não houver dados
+  }, [dataTblTest, arrCalcDia]);
+
+  // Calcula as quinzenas apenas se dataTblTest for um array válido
+  const quinzenaResult = useMemo(() => {
+    return Array.isArray(dataTblTest) && dataTblTest.length > 0 
+      ? calcQuinzenal(dataTblTest) 
+      : [];
+  }, [dataTblTest]);
+
+  // Calcula as mensalidades apenas se dataTblTest for um array válido
+  const mesResult = useMemo(() => {
+    return Array.isArray(dataTblTest) && dataTblTest.length > 0 
+      ? calcMensal(dataTblTest) : [];
+  }, [dataTblTest]);
+
+  // Calcula os anuais apenas se dataTblTest for um array válido
+  const anoResult = useMemo(() => {
+    return Array.isArray(dataTblTest) && dataTblTest.length > 0 
+      ? calcAnual(dataTblTest) 
+      : [];
+  }, [dataTblTest]);
+
+  console.log("Resultados customizado:", diasResult);
+  console.log("Resultados das Quinzenas:", quinzenaResult);
+  console.log("Resultados Mensais:", mesResult);
+  console.log("Resultado Anual:", anoResult);
 
   const handleFetchData = useCallback(async () => {
-    setLoading(true); // Definindo loading como true ao iniciar a requisição
-    await executeGet(setDataTblTest); // Chamando executeGet passando setDataTblTest
-    setLoading(false); // Definindo loading como false após a requisição
-  }, [setDataTblTest]); // O callback depende do setDataTblTest
+    setLoading(true);
+    await executeGet(setDataTblTest);
+    setLoading(false);
+  }, [setDataTblTest]);
 
-  return (
-    <div>
-      <h1>Dados da Tabela</h1>
-      <button onClick={handleFetchData}>Acessar dados</button> {/* Chamando handleFetchData ao clicar */}
-      {loading && <div>Carregando dados...</div>} {/* Exibindo mensagem de loading */}
-      {Array.isArray(dataTblTest) && dataTblTest.map((data) => { // Verificando se dataTblTest é um array
-        return (
+  return (<>
+      <div>
+        <button onClick={handleFetchData}>Acessar dados</button>
+        {loading && <div>Carregando dados...</div>}
+        {Array.isArray(dataTblTest) && dataTblTest.map((data) => (
           <div key={data.id}>
             {data.id} - {data.valor} - {data.situacao}
           </div>
-        );
-      })}
-      {dataTblTest && !Array.isArray(dataTblTest) && ( // Mensagem para caso dataTblTest não seja um array
-        <div>Dados não disponíveis ou em formato inválido.</div>
-      )}
+        ))}
+        {dataTblTest && !Array.isArray(dataTblTest) && (
+          <div>Dados não disponíveis ou em formato inválido.</div>
+        )}
+      </div>
+      <div>
     </div>
-  );
+  </>);
 };

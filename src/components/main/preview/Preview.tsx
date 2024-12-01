@@ -49,7 +49,17 @@ export const Preview = () => {
       </section>
       {/* <InsertDataComponent/> */}
       {/* <UpdateDataComponent/> */}
-      <GetDataComponent/>
+      <GetDataComponent arrCalcDia={[
+        {dia: 1, mes: 1, ano: 2024},
+        {dia: 3, mes: 1, ano: 2024},
+        {dia: 4, mes: 1, ano: 2024},
+        {dia: 2, mes: 2, ano: 2024},
+        {dia: 11, mes: 2, ano: 2024},
+        {dia: 13, mes: 1, ano: 2024},
+        {dia: 19, mes: 10, ano: 2024},
+        {dia: 21, mes: 10, ano: 2024},
+        {dia: 30, mes: 12, ano: 2024},
+      ]}/>
     </div>
   );
 };

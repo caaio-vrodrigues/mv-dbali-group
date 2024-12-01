@@ -1,4 +1,3 @@
-// src/data/get/calcQuinzenal.tsx
 export const calcQuinzenal = (dados = []) => {
   const registros = Array.isArray(dados) ? dados : [];
 
