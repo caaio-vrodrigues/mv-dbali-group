@@ -1,5 +1,5 @@
 'use client';
-
+ 
 //components
 import { PaymentsCards } from './payments-cards/PaymentsCards';
 import { Works } from './works/Works';

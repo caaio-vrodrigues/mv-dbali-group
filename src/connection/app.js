@@ -25,7 +25,7 @@ const pool = mySQL.createPool({
 
 // Função para lidar com erros e enviar respostas
 const handleResponse = (res, err, results, successMessage) => {
-  if (err) {
+  if(err){
     console.error(err);
     return res.status(500).json({ message: 'Erro ao processar a requisição.' });
   };
@@ -36,7 +36,7 @@ const handleResponse = (res, err, results, successMessage) => {
 app.post('/insert-dados', (req, res) => {
   const { query, valores } = req.body;
 
-  if (!query || !valores) {
+  if(!query || !valores){
     return res.status(400).json({ message: 'Query ou valores não fornecidos' });
   };
 
@@ -49,9 +49,9 @@ app.post('/insert-dados', (req, res) => {
 app.post('/get-dados', (req, res) => {
   const { query } = req.body;
 
-  if (!query) {
+  if(!query){
     return res.status(400).json({ message: 'Query não fornecida' });
-  }
+  };
 
   pool.query(query, (err, results) => {
     handleResponse(res, err, results, 'Dados obtidos com sucesso!');
@@ -62,9 +62,9 @@ app.post('/get-dados', (req, res) => {
 app.post('/update-dados', (req, res) => {
   const { query, values } = req.body;
 
-  if (!query || !values) {
+  if(!query || !values){
     return res.status(400).json({ message: 'Query ou valores não fornecidos' });
-  }
+  };
 
   pool.query(query, values, (err, results) => {
     handleResponse(res, err, results, 'Dados atualizados com sucesso!');

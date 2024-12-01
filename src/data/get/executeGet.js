@@ -1,7 +1,7 @@
 // src/data/executeGet.js
 import { testTbl_query1 } from '@/data/get/testTbl_query1'; // Importando getQuery
 
-export const fetchDataAndStore = async (query, setData) => {
+const fetchDataAndStore = async (query, setData) => {
   try {
     const response = await fetch('http://localhost:3001/get-dados', {
       method: 'POST',
@@ -15,7 +15,7 @@ export const fetchDataAndStore = async (query, setData) => {
 
     if (response.ok) {
       console.log('Dados obtidos com sucesso!', result);
-      setData(result); // Armazenando os dados no contexto
+      setData(result.results); // Armazenando os dados no contexto
       return result; // Retornando os dados obtidos
     } else {
       console.error('Erro ao obter dados:', result.message);
