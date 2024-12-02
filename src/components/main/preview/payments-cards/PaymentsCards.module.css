@@ -2,11 +2,10 @@
   background-color: white;
   border-radius: 10px;
   box-shadow: var(--boxShadow);
-  width: 25%;
-  min-height: 14vh;
+  width: 26.5%;
   min-width: 9rem;
-  padding: 2%;
-  margin-top: auto;
+  padding: 0.5rem;
+  margin-top: 2rem;
 }
 
 .wrapArticle h1{
@@ -22,8 +21,8 @@
 }
 
 .wrapTotal{
-  margin-top: 2vh;
-  margin-bottom: 2vh;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .wrapPeriods{
@@ -42,19 +41,14 @@
   .wrapArticle{
     margin-inline: auto;
     width: 40%;
-    margin-top: 2.2vh;
-  }
-}
-
-@media screen and (max-width: 745px){
-  .wrapArticle{
-    width: 90%;
+    margin-top: 1rem;
   }
 }
 
 @media screen and (max-width: 650px){
   .wrapArticle{
-    margin-left: 2vw;
-    margin-bottom: 1vh;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 }

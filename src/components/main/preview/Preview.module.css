@@ -1,19 +1,7 @@
-.wrap{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  background-color: var(--primaryColor);
-  width: 94%;
-  margin-top: 1%;
-  padding: 2%;
-  border-radius: 15px;
-  box-shadow: var(--boxShadow);
-  min-height: 63vh;
-}
-
 .block{
   border-radius: 10px;
-  max-height: 40vh;
+  max-height: 25rem;
+  min-height: 25rem;
 }
 
 .block::-webkit-scrollbar {
@@ -50,6 +38,7 @@
 }
 
 .buttonFloat{
+  z-index: 99;
   float: left;
   position: absolute;
   margin-top: 0.1rem;
@@ -62,7 +51,6 @@
   color: white;
   background-color: #000000;
   border-radius: 5px;
-  margin-left: 0.1vw;
   padding: 0.2rem;
 }
 
@@ -89,6 +77,11 @@
   .blockRight{
     width: 48%;
   }
+
+  .buttonFloat{
+    width: fit-content;
+    margin-left: 0.3rem;
+  }
 }
 
 @media screen and (max-width: 744px){
@@ -112,7 +105,8 @@
 
   .blockLeft{
     flex-wrap: nowrap;
-    overflow-y: scroll;
+    overflow-y: hidden;
+    min-height: 0;
   }
 
   .blockLeft::-webkit-scrollbar {

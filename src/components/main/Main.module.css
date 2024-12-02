@@ -4,3 +4,16 @@
   flex-direction: column;
   margin-top: 4rem;
 }
+
+.wrap{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: var(--primaryColor);
+  width: 94%;
+  margin-top: 1%;
+  padding: 2%;
+  border-radius: 15px;
+  box-shadow: var(--boxShadow);
+  height: fit-content;
+}

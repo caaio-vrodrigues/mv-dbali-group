@@ -24,41 +24,39 @@ export const Preview = () => {
   const { dataTblFluxoPagamentos } = useContext(ContextMaster);
   console.log(dataTblFluxoPagamentos);
 
-  return(
-    <div className={`${styles.wrap}`}>
-      <section className={`${styles.block} ${styles.blockLeft}`}>
-        <button className={`${styles.buttonFloat}`}>
-          Fluxo
-            <Image
-              className={styles.arrowIcon}
-              src={arrowForwardWhite}
-              alt='Flecha para a página Fluxo'/>
-        </button>
-        <PaymentsCards/>
-      </section>
-      <section className={`${styles.block} ${styles.blockRight}`}>
-        <button className={`${styles.buttonFloat}`}>
-          Obras
-            <Image
-              className={styles.arrowIcon}
-              src={arrowForwardWhite}
-              alt='Flecha para a página Fluxo'/>
-        </button>
-        <Works/>
-      </section>
-      {/* <InsertDataComponent/> */}
-      {/* <UpdateDataComponent/> */}
-      {/* <GetDataComponent arrCalcDia={[
-        {dia: 1, mes: 1, ano: 2024},
-        {dia: 3, mes: 1, ano: 2024},
-        {dia: 4, mes: 1, ano: 2024},
-        {dia: 2, mes: 2, ano: 2024},
-        {dia: 11, mes: 2, ano: 2024},
-        {dia: 13, mes: 1, ano: 2024},
-        {dia: 19, mes: 10, ano: 2024},
-        {dia: 21, mes: 10, ano: 2024},
-        {dia: 30, mes: 12, ano: 2024},
-      ]}/> */}
-    </div>
-  );
+  return(<>
+    <section className={`${styles.block} ${styles.blockLeft}`}>
+      <button className={`${styles.buttonFloat}`}>
+        Fluxo
+          <Image
+            className={styles.arrowIcon}
+            src={arrowForwardWhite}
+            alt='Flecha para a página Fluxo'/>
+      </button>
+      <PaymentsCards/>
+    </section>
+    <section className={`${styles.block} ${styles.blockRight}`}>
+      <button className={`${styles.buttonFloat}`}>
+        Obras
+          <Image
+            className={styles.arrowIcon}
+            src={arrowForwardWhite}
+            alt='Flecha para a página Fluxo'/>
+      </button>
+      <Works/>
+    </section>
+    {/* <InsertDataComponent/> */}
+    {/* <UpdateDataComponent/> */}
+    {/* <GetDataComponent arrCalcDia={[
+      {dia: 1, mes: 1, ano: 2024},
+      {dia: 3, mes: 1, ano: 2024},
+      {dia: 4, mes: 1, ano: 2024},
+      {dia: 2, mes: 2, ano: 2024},
+      {dia: 11, mes: 2, ano: 2024},
+      {dia: 13, mes: 1, ano: 2024},
+      {dia: 19, mes: 10, ano: 2024},
+      {dia: 21, mes: 10, ano: 2024},
+      {dia: 30, mes: 12, ano: 2024},
+    ]}/> */}
+  </>);
 };
