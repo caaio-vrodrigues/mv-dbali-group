@@ -15,5 +15,19 @@
 }
 
 .headerBlocks{
-  width: 32.8%;
+  width: 49%;
+}
+
+@media screen and (max-width: 240px){
+  .header{
+    flex-direction: column;
+    max-height: none;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0.3rem;
+  }
+
+  .headerBlocks{
+    width: fit-content !important;
+  }
 }

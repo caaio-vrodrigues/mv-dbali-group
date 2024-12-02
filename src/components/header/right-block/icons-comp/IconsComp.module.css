@@ -22,3 +22,14 @@
 .iconsWrap button img:hover{
   background-color: rgb(137, 110, 15);
 }
+
+@media screen and (max-width: 240px){
+  .iconsWrap{
+    justify-content: space-between;
+    width: 6.5rem;
+  }
+
+  .iconsWrap button{
+    margin-left: 0;
+  }
+}

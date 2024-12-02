@@ -24,3 +24,9 @@
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
+
+@media screen and (max-width: 240px){
+  .wrapLogo{
+    margin-bottom: 0.5rem;
+  }
+}
