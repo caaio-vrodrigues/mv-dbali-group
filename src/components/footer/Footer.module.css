@@ -1,7 +1,14 @@
 .foot{
+  display: flex;
   text-align: center;
-  height: 15vh;
   min-height: 120px;
-  box-shadow: 0px 0.1px 3px 0.1px rgb(211, 209, 218);
+  border-top: 1px solid black;
+  box-shadow: 0px 0.1px 3px 0.1px rgb(0, 0, 0);
   margin-top: 3vh;
+  padding-bottom: 1rem;
+}
+
+.footBlocks{
+  width: 33.33%;
+  padding-top: 1rem;
 }

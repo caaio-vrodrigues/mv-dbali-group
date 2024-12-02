@@ -5,6 +5,12 @@
   margin-top: 4rem;
 }
 
+.divisionLine{
+  height: 10rem;
+  width: 90%;
+  color: black;
+}
+
 .wrap{
   display: flex;
   flex-wrap: wrap;

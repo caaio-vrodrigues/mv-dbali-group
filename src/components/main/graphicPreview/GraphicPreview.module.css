@@ -1,0 +1,14 @@
+.container {
+  text-align: center;
+  margin: 20px;
+}
+
+.canvas {
+  border: 1px solid black; /* Estilo da borda do canvas */
+  display: inline-block; /* Alinha o canvas centralizado */
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
