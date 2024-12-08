@@ -1,0 +1,55 @@
+.wrapArticle{
+  background-color: white;
+  margin: 2%;
+  margin-bottom: 4%;
+  border-radius: 10px;
+  padding: 2%;
+  margin-top: 1rem;
+}
+
+.contH1{
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapArticle h1{
+  font-size: var(--fontSize-h1);
+  margin-bottom: 2%;
+  width: 80%;
+}
+
+.arrowForwardBlack{
+  width: 2rem;
+  height: 1.3rem;
+  margin-left: auto;
+}
+
+.contH2{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrapH2{
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 5%;
+}
+
+.wrapH2 h2{
+  font-size: var(--fontSize-h2);
+}
+
+.wrapArticle p{
+  font-size: var(--pSize);
+  margin-left: 0.2rem;
+}
+
+.h3Red{
+  font-size: 1rem;
+  color: rgb(205, 45, 45);
+}
+
+.h3Green{
+  font-size: 1rem;
+  color: green;
+}

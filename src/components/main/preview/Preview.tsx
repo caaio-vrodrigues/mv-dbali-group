@@ -2,7 +2,7 @@
  
 //components
 import { PaymentsCards } from './payments-cards/PaymentsCards';
-import { Works } from './works/Works';
+import { Orcamentos } from './orcamentos-preview/OrcamentosPreview';
 // import { InsertDataComponent } from '@/data/insert/InsertDataComponent';
 // import { UpdateDataComponent } from '@/data/update/UpdateDataComponent';
 // import { GetDataComponent } from '@/data/get/GetDataComponent';
@@ -21,12 +21,15 @@ import ContextMaster from '@/context/ContextProvider';
 import styles from './Preview.module.css';
 
 export const Preview = () => {
-  const { dataTblFluxoPagamentos } = useContext(ContextMaster);
+  const { dataTblFluxoPagamentos, showOrcamentos, setShowOrcamentos 
+    } = useContext(ContextMaster);
   console.log(dataTblFluxoPagamentos);
 
   return(<>
     <section className={`${styles.block} ${styles.blockLeft}`}>
-      <button className={`${styles.buttonFloat}`}>
+      <button 
+        onClick={()=>{}}
+        className={`${styles.buttonFloat}`}>
         Fluxo
           <Image
             className={styles.arrowIcon}
@@ -36,14 +39,16 @@ export const Preview = () => {
       <PaymentsCards/>
     </section>
     <section className={`${styles.block} ${styles.blockRight}`}>
-      <button className={`${styles.buttonFloat}`}>
-        Obras
+      <button 
+        onClick={()=>setShowOrcamentos(!showOrcamentos)}
+        className={`${styles.buttonFloat}`}>
+        Orçamentos
           <Image
             className={styles.arrowIcon}
             src={arrowForwardWhite}
             alt='Flecha para a página Fluxo'/>
       </button>
-      <Works/>
+      <Orcamentos/>
     </section>
     {/* <InsertDataComponent/> */}
     {/* <UpdateDataComponent/> */}

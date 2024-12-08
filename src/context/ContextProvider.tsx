@@ -32,15 +32,19 @@ type TContextMasterProvider = {
 };
 
 type TContextMaster = {
+  showOrcamentos: boolean;
   dataTblFluxoPagamentos: IFluxoPagamentos[] | null;
   dataTblTest: ITestData[] | null;
+  setShowOrcamentos: React.Dispatch<boolean>;
   setDataTblFluxoPagamentos: React.Dispatch<React.SetStateAction<IFluxoPagamentos[] | null>>;
   setDataTblTest: React.Dispatch<React.SetStateAction<ITestData[] | null>>;
 };
 
 const ContextMaster = createContext<TContextMaster>({
+  showOrcamentos: false,
   dataTblFluxoPagamentos: null,
   dataTblTest: null,
+  setShowOrcamentos: () => {},
   setDataTblFluxoPagamentos: () => {},
   setDataTblTest: () => {},
 });
@@ -48,17 +52,20 @@ const ContextMaster = createContext<TContextMaster>({
 export default ContextMaster;
 
 export function ContextMasterProvider({ children }: TContextMasterProvider): React.ReactNode {
+  //testes
   const [dataTblFluxoPagamentos, setDataTblFluxoPagamentos] = useState<IFluxoPagamentos[] | null>(null);
   const [dataTblTest, setDataTblTest] = useState<ITestData[] | null>(null);
 
+  //programa
+  const [showOrcamentos, setShowOrcamentos] = useState<boolean>(false);
+
   return (
     <ContextMaster.Provider value={{
-      dataTblFluxoPagamentos,
-      setDataTblFluxoPagamentos,
-      dataTblTest,
-      setDataTblTest
+      dataTblFluxoPagamentos, setDataTblFluxoPagamentos,
+      dataTblTest, setDataTblTest,
+      showOrcamentos, setShowOrcamentos,
     }}>
       {children}
     </ContextMaster.Provider>
   );
-}
+};
