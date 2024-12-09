@@ -1,5 +1,3 @@
-'use client'
-
 // src/data/get/GetDataComponent.tsx
 import React, { useContext, useCallback, useMemo } from 'react';
 import { executeGet } from '@/data/get/executeGet';

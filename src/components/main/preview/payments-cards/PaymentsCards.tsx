@@ -1,5 +1,5 @@
 //data
-import { paymentsData } from '@/data/payments-data';
+import { paymentsData } from '@/data/dados-teste/payments-data';
 
 //styles
 import styles from './PaymentsCards.module.css';

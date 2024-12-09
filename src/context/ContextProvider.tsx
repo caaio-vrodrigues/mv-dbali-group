@@ -1,9 +1,7 @@
 'use client'
 
-// src/context/ContextProvider.tsx
 import React, { createContext, useState } from 'react';
 
-// Define a interface para os registros de fluxo de pagamentos
 interface IFluxoPagamentos {
   doc: string;
   doc_id: number;
@@ -18,7 +16,6 @@ interface IFluxoPagamentos {
   valor: number;
 }
 
-// Define a interface para os registros de teste
 interface ITestData {
   id: number;
   fornecedor: string;
@@ -57,7 +54,7 @@ export function ContextMasterProvider({ children }: TContextMasterProvider): Rea
   const [dataTblTest, setDataTblTest] = useState<ITestData[] | null>(null);
 
   //programa
-  const [showOrcamentos, setShowOrcamentos] = useState<boolean>(false);
+  const [showOrcamentos, setShowOrcamentos] = useState<boolean>(true);
 
   return (
     <ContextMaster.Provider value={{

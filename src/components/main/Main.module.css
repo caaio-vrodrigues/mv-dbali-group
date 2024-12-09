@@ -14,10 +14,10 @@
 .wrap{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: var(--primaryColor);
   width: 94%;
-  margin-top: 1%;
+  margin-top: 1rem;
   padding: 2%;
   border-radius: 15px;
   box-shadow: var(--boxShadow);

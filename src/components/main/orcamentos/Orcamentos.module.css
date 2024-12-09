@@ -1,0 +1,9 @@
+.orcamentosContainer{
+  width: 100%;
+}
+
+.wrapOrcamentos{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

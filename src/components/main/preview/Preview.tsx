@@ -1,14 +1,16 @@
-'use client';
- 
 //components
 import { PaymentsCards } from './payments-cards/PaymentsCards';
-import { Orcamentos } from './orcamentos-preview/OrcamentosPreview';
+import { OrcamentosPreview } from './orcamentos-preview/OrcamentosPreview';
 // import { InsertDataComponent } from '@/data/insert/InsertDataComponent';
 // import { UpdateDataComponent } from '@/data/update/UpdateDataComponent';
 // import { GetDataComponent } from '@/data/get/GetDataComponent';
 
+
+
 //image
 import Image from 'next/image';
+
+// icon-img
 import arrowForwardWhite from '@/icon/arrow-forward-white.png';
 
 //data
@@ -21,9 +23,7 @@ import ContextMaster from '@/context/ContextProvider';
 import styles from './Preview.module.css';
 
 export const Preview = () => {
-  const { dataTblFluxoPagamentos, showOrcamentos, setShowOrcamentos 
-    } = useContext(ContextMaster);
-  console.log(dataTblFluxoPagamentos);
+  const { showOrcamentos, setShowOrcamentos } = useContext(ContextMaster);
 
   return(<>
     <section className={`${styles.block} ${styles.blockLeft}`}>
@@ -48,7 +48,7 @@ export const Preview = () => {
             src={arrowForwardWhite}
             alt='Flecha para a página Fluxo'/>
       </button>
-      <Orcamentos/>
+      <OrcamentosPreview/>
     </section>
     {/* <InsertDataComponent/> */}
     {/* <UpdateDataComponent/> */}
