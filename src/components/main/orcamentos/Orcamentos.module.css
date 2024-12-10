@@ -2,8 +2,34 @@
   width: 100%;
 }
 
+.WrapButtons_Add_Back{
+  display: flex;
+  width: 100%;
+}
+
+.WrapButtons_Add_Back button{
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border-radius: 50%;
+  border: none;
+  margin-right: 0.3rem;
+  cursor: pointer;
+  background-color: black;
+}
+
+.WrapButtons_Add_Back button:hover{
+  background-color: rgb(110, 105, 105);
+}
+
+.butBackAdd{
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-top: 10%;
+}
+
 .wrapOrcamentos{
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
 }

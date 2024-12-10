@@ -19,8 +19,8 @@ type TPreviewOrcmItem = {
   valor_fechado: number,
   valor_estip_gasto: number,
   data_emissao: Date,
-  inicio_execucao: Date,
-  previsao_termino: Date,
+  inicio_execucao: Date | null,
+  previsao_termino: Date | null,
   situacaoObra: string,
   pdf_orcamento: string,
   pdf_contrato: string
@@ -50,15 +50,17 @@ const PreviewOrcamItem = ({
           className={styles.arrowForwardBlack} />
       </div>
       <div className={`${styles.contH2}`}>
-        <div className={`${styles.wrapH2}`}>
-          <h2>Início da execução</h2>
-          <p>{formatDate(inicio_execucao)}</p>
-        </div>
-        <div className={`${styles.wrapH2}`}>
-          <h2>Previsão de término</h2>
-          <p>{formatDate(previsao_termino)}</p>
-        </div>
-        <h3 className={`${situacaoObra === 'em obra' ? styles.h3Red : styles.h3Green}`}>{situacaoObra}</h3>
+        {inicio_execucao && 
+          <div className={`${styles.wrapH2}`}>
+            <h2>Início da execução</h2>
+            <p>{formatDate(inicio_execucao)}</p>
+          </div>}
+        {previsao_termino && 
+          <div className={`${styles.wrapH2}`}>
+            <h2>Previsão de término</h2>
+            <p>{formatDate(previsao_termino)}</p>
+          </div>}
+        <h3 className={`${situacaoObra === 'em obra' ? styles.h3Red : situacaoObra === 'aguardando'? styles.h3Blue : styles.h3Green}`}>{situacaoObra}</h3>
       </div>
     </article>
   );
