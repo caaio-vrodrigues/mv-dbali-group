@@ -1,5 +1,5 @@
 //components
-import { GraficoGastos } from '../graficos/GraficoGastos';
+import { GraficoGastos } from '../graficos/grafico-gastos/GraficoGastos';
 
 //styles
 import styles from './Orcamento.module.css';
@@ -39,6 +39,15 @@ type TOrcamento = {
 };
 
 export const Orcamento = ({ data }: TOrcamento) => {
+  const dataGrafico = {
+    gasto_alimentacao: data.gasto_alimentacao,
+    gasto_combustivel: data.gasto_combustivel,
+    gasto_material_obra: data.gasto_material_obra,
+    gasto_servico_obra: data.gasto_servico_obra,
+    valor_estip_gasto: data.valor_estip_gasto,
+    valor_fechado: data.valor_fechado
+  };
+
   return(
     <article className={`${styles.artic}`}>
       <div className={styles.wrapH1AndButtons}>
@@ -97,16 +106,7 @@ export const Orcamento = ({ data }: TOrcamento) => {
               </span>
             </h2>
             <div className={styles.wrapGrafico}>
-              <GraficoGastos gastos={
-                {
-                  gasto_alimentacao: data.gasto_alimentacao,
-                  gasto_combustivel: data.gasto_combustivel,
-                  gasto_material_obra: data.gasto_material_obra,
-                  gasto_servico_obra: data.gasto_servico_obra,
-                  valor_estip_gasto: data.valor_estip_gasto,
-                  valor_fechado: data.valor_fechado
-                }
-              }/>
+              <GraficoGastos gastos={dataGrafico}/>
             </div>
           </div>
           <div className={styles.wrapH2}>

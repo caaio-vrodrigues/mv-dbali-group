@@ -3,6 +3,9 @@
 import React from 'react';
 import styles from './GraficoGastos.module.css'; // Importando CSS Module
 
+//utils
+import { formatMoeda } from '@/utils/formatMoeda';
+
 type GastoProps = {
   valor_fechado: number,
   valor_estip_gasto: number,
@@ -30,12 +33,19 @@ export const GraficoGastos: React.FC<{ gastos: GastoProps }> = ({ gastos }) => {
   };
 
   // Cálculo do percentual restante disponível
-  const gastoTotal = gasto_material_obra + gasto_servico_obra + gasto_combustivel + gasto_alimentacao;
-  const percentualDisponivel = (valor_estip_gasto - gastoTotal) / valor_estip_gasto * 100;
+  const gastoTotal = gasto_material_obra + gasto_servico_obra +
+    gasto_combustivel + gasto_alimentacao;
+
+  const percentualDisponivel = 
+    ((valor_estip_gasto - gastoTotal) / valor_estip_gasto) * 100;
+
+  const valorDisponivel = valor_estip_gasto - gastoTotal;
 
   // Função para calcular os ângulos de cada segmento
-  const calculateAngles = (percentages) => {
-    const angles = [];
+  const calculateAngles = (
+    percentages: Record<string, number>
+  ): [number, number][] => {
+    const angles: [number, number][] = [];
     let cumulativeAngle = 0;
 
     for (const percentage of Object.values(percentages)) {
@@ -53,7 +63,7 @@ export const GraficoGastos: React.FC<{ gastos: GastoProps }> = ({ gastos }) => {
   });
 
   // Função para criar os segmentos do gráfico
-  const createPath = (startAngle, endAngle) => {
+  const createPath = (startAngle: number, endAngle: number): string => {
     const radius = 100; // Raio do gráfico
     const x1 = 100 + radius * Math.cos((Math.PI / 180) * startAngle);
     const y1 = 100 + radius * Math.sin((Math.PI / 180) * startAngle);
@@ -70,14 +80,56 @@ export const GraficoGastos: React.FC<{ gastos: GastoProps }> = ({ gastos }) => {
     '#4682B4', // Gasto Serviço
     '#5F9EA0', // Gasto Combustível
     '#6495ED', // Gasto Alimentação
-    '#D3D3D3', // Disponível
+    '#e8e6a0', // Disponível
+  ];
+
+  // Legenda do gráfico de gastos
+  const legendData = [
+    { 
+      label: 'Gasto Material', 
+      value: porcentagens.GastoMaterial, 
+      color: colors[0],
+      realValue: gasto_material_obra,
+    },
+    { 
+      label: 'Gasto Serviço', 
+      value: porcentagens.GastoServiço, 
+      color: colors[1],
+      realValue: gasto_servico_obra,
+    },
+    { 
+      label: 'Gasto Combustível', 
+      value: porcentagens.GastoCombustível, 
+      realValue: gasto_combustivel,
+      color: colors[2],
+    },
+    { 
+      label: 'Gasto Alimentação', 
+      value: porcentagens.GastoAlimentação, 
+      realValue: gasto_alimentacao,
+      color: colors[3],
+    },
+    { 
+      label: 'Disponível', 
+      value: percentualDisponivel, 
+      realValue: valorDisponivel,
+      color: colors[4],
+    },
   ];
 
   return (
     <div>
-      <svg width="220" height="220" viewBox="0 0 220 220" aria-labelledby="graficoGastosTitle graficoGastosDesc">
+      <svg
+        width="220"
+        height="220"
+        viewBox="0 0 220 220"
+        aria-labelledby="graficoGastosTitle graficoGastosDesc"
+      >
         <title id="graficoGastosTitle">Gráfico de Gastos</title>
-        <desc id="graficoGastosDesc">Um gráfico de pizza mostrando a distribuição de gastos em relação ao valor estipulado.</desc>
+        <desc id="graficoGastosDesc">
+          Um gráfico de pizza mostrando a distribuição de gastos em relação
+          ao valor estipulado.
+        </desc>
         {angles.map((angle, index) => (
           <path
             key={index}
@@ -87,16 +139,23 @@ export const GraficoGastos: React.FC<{ gastos: GastoProps }> = ({ gastos }) => {
           />
         ))}
       </svg>
-
       <div className={styles.legenda}>
-        <h3>Legenda</h3>
         <ul className={styles.listaLegenda}>
-          <li><span className={styles.circulo} style={{ backgroundColor: colors[0] }}></span> Gasto Material: {porcentagens.GastoMaterial.toFixed(2)}%</li>
-          <li><span className={styles.circulo} style={{ backgroundColor: colors[1] }}></span> Gasto Serviço: {porcentagens.GastoServiço.toFixed(2)}%</li>
-          <li><span className={styles.circulo} style={{ backgroundColor: colors[2] }}></span> Gasto Combustível: {porcentagens.GastoCombustível.toFixed(2)}%</li>
-          <li><span className={styles.circulo} style={{ backgroundColor: colors[3] }}></span> Gasto Alimentação: {porcentagens.GastoAlimentação.toFixed(2)}%</li>
-          <li><span className={styles.circulo} style={{ backgroundColor: colors[4] }}></span> Disponível: {percentualDisponivel.toFixed(2)}%</li>
+          {legendData.map((item, index) => (
+            <li key={index}>
+              <div className={styles.wrapLiInside}>
+                <span
+                  className={styles.circulo}
+                  style={{ backgroundColor: item.color }}>
+                </span>
+                <h4>{`${item.label}: `}</h4>
+              </div>
+              <p>R$ {formatMoeda(item.realValue)}</p>
+              <p>{item.value.toFixed(2)}%</p>
+            </li>
+          ))}
         </ul>
+        <h2>Gastos totais: {formatMoeda(gastoTotal)}</h2>
       </div>
     </div>
   );

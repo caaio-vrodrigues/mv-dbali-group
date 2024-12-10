@@ -9,7 +9,7 @@
 }
 
 .block::-webkit-scrollbar-track {
-  background: #000000; /* Fundo da barra */
+  background: var(--bgButton); /* Fundo da barra */
   border-radius: 15px;
 }
 
@@ -32,7 +32,7 @@
 .blockRight{
   overflow-y: scroll;
   width: 35%;
-  background-color: rgb(77, 76, 82);
+  background-color: var(--bgWrapCards);
   height: fit-content;
   box-shadow: var(--boxShadow);
 }
@@ -48,17 +48,16 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: white;
-  background-color: #000000;
+  background-color: var(--bgButton);
   border-radius: 5px;
-  padding: 0.2rem;
+  padding: 0.4rem;
 }
 
 .buttonFloat:hover{
   transition: 0.1s;
-  color: rgb(0, 0, 0);
-  background-color: rgb(196, 198, 208);
+  background-color: var(--bgButtonHover);
 }
 
 .arrowIcon{
@@ -72,7 +71,7 @@
   .blockLeft{
     width: 48%;
     overflow-y: scroll;
-    background-color: rgb(77, 76, 82);
+    background-color: var(--bgWrapCards);
     height: fit-content;
     box-shadow: var(--boxShadow);
   }

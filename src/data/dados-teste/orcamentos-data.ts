@@ -1,5 +1,8 @@
 
 
+// // Exemplo de uso
+// console.log(formatUTCDate(new Date(Date.UTC(2024, 5, 11)))); // "11/06/2024"
+
 type TOrcamentosData = {
   id: number,
   num_orcam: string | number,
@@ -35,9 +38,9 @@ export const orcamentosData:TOrcamentosData = [
     gasto_servico_obra: 310870.12,
     gasto_combustivel: 20110.55,
     gasto_alimentacao: 42967.34,
-    data_emissao: new Date('2024-03-13'),
-    inicio_execucao: new Date('2024-04-01'),
-    previsao_termino: new Date('2024-10-01'),
+    data_emissao: new Date(Date.UTC(2024, 5, 11)),
+    inicio_execucao: new Date(Date.UTC(2024, 5, 11)),
+    previsao_termino: new Date(Date.UTC(2024, 5, 11)),
     situacaoObra: 'finalizado',
     pdf_orcamento: '@/pdf/pdf1.pdf',
     pdf_contrato: '@/pdf/pdf2.pdf'
@@ -55,9 +58,9 @@ export const orcamentosData:TOrcamentosData = [
     gasto_servico_obra: 290870.55,
     gasto_combustivel: 18110.45,
     gasto_alimentacao: 42967.34,
-    data_emissao: new Date('2024-03-14'),
-    inicio_execucao: new Date('2024-04-02'),
-    previsao_termino: new Date('2024-10-02'),
+    data_emissao: new Date(Date.UTC(2024, 5, 11)),
+    inicio_execucao: new Date(Date.UTC(2024, 5, 11)),
+    previsao_termino: new Date(Date.UTC(2024, 5, 11)),
     situacaoObra: 'finalizado',
     pdf_orcamento: '@/pdf/pdf1.pdf',
     pdf_contrato: '@/pdf/pdf2.pdf'
@@ -75,9 +78,9 @@ export const orcamentosData:TOrcamentosData = [
     gasto_servico_obra: 290870.55,
     gasto_combustivel: 18110.45,
     gasto_alimentacao: 42967.34,
-    data_emissao: new Date('2024-03-15'),
-    inicio_execucao: new Date('2024-04-03'),
-    previsao_termino: new Date('2024-10-03'),
+    data_emissao: new Date(Date.UTC(2024, 5, 11)),
+    inicio_execucao: new Date(Date.UTC(2024, 5, 11)),
+    previsao_termino: new Date(Date.UTC(2024, 5, 11)),
     situacaoObra: 'em obra',
     pdf_orcamento: '@/pdf/pdf1.pdf',
     pdf_contrato: '@/pdf/pdf2.pdf'
@@ -95,9 +98,9 @@ export const orcamentosData:TOrcamentosData = [
     gasto_servico_obra: 290870.55,
     gasto_combustivel: 18110.45,
     gasto_alimentacao: 42967.34,
-    data_emissao: new Date('2024-03-16'),
-    inicio_execucao: new Date('2024-04-04'),
-    previsao_termino: new Date('2024-10-04'),
+    data_emissao: new Date(Date.UTC(2024, 5, 11)),
+    inicio_execucao: new Date(Date.UTC(2024, 5, 11)),
+    previsao_termino: new Date(Date.UTC(2024, 5, 11)),
     situacaoObra: 'em obra',
     pdf_orcamento: '@/pdf/pdf1.pdf',
     pdf_contrato: '@/pdf/pdf2.pdf'
@@ -115,9 +118,9 @@ export const orcamentosData:TOrcamentosData = [
     gasto_servico_obra: 290870.55,
     gasto_combustivel: 18110.45,
     gasto_alimentacao: 42967.34,
-    data_emissao: new Date('2024-03-17'),
-    inicio_execucao: new Date('2024-04-05'),
-    previsao_termino: new Date('2024-10-05'),
+    data_emissao: new Date(Date.UTC(2024, 5, 11)),
+    inicio_execucao: new Date(Date.UTC(2024, 5, 11)),
+    previsao_termino: new Date(Date.UTC(2024, 5, 11)),
     situacaoObra: 'em obra',
     pdf_orcamento: '@/pdf/pdf1.pdf',
     pdf_contrato: '@/pdf/pdf2.pdf'
@@ -135,7 +138,7 @@ export const orcamentosData:TOrcamentosData = [
     gasto_servico_obra: 290870.55,
     gasto_combustivel: 18110.45,
     gasto_alimentacao: 42967.34,
-    data_emissao: new Date('2024-03-18'),
+    data_emissao: new Date(Date.UTC(2024, 5, 11)),
     inicio_execucao: null,
     previsao_termino: null,
     situacaoObra: 'aguardando',
@@ -155,7 +158,7 @@ export const orcamentosData:TOrcamentosData = [
     gasto_servico_obra: 290870.55,
     gasto_combustivel: 18110.45,
     gasto_alimentacao: 42967.34,
-    data_emissao: new Date('2024-05-11'),
+    data_emissao: new Date(Date.UTC(2024, 5, 11)),
     inicio_execucao: null,
     previsao_termino: null,
     situacaoObra: 'aguardando',

@@ -18,6 +18,7 @@ import Image from 'next/image';
 //img-icon
 import arrowBackBlack from '@/icon/arrow-back-white.png';
 import addBlack from '@/icon/add-white.png';
+import lupaWhite from '@/icon/lupa-white.png';
 
 export const Orcamentos = () => {
   const { showOrcamentos, setShowOrcamentos } = useContext(ContextMaster);
@@ -34,6 +35,12 @@ export const Orcamentos = () => {
           onClick={()=>setShowOrcamentos(!showOrcamentos)}>
             <Image className={styles.butBackAdd} src={addBlack} alt='Adicionar novo orçamento.'/>
         </button>
+        <div className={styles.wrapInput}>
+          <input type="text" placeholder='Buscar orçamento'/>
+          <button onClick={()=>{}}>
+            <Image className={styles.lupa} src={lupaWhite} alt='Buscar orçamento.'/>
+          </button>
+        </div>
       </div>
       <div className={`${styles.wrapOrcamentos}`}>
         {orcamentosData.map((data)=>{

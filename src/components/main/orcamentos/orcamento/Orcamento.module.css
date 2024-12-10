@@ -15,7 +15,7 @@
 
 .wrapH1AndButtons button{
   margin-left: 1%;
-  background-color: black;
+  background-color: var(--bgButton);
   border-radius: 0.3rem;
   cursor: pointer;
   border: none;
@@ -23,7 +23,7 @@
 }
 
 .wrapH1AndButtons button:hover{
-  background-color: rgb(127, 126, 126);
+  background-color: var(--bgButtonHover);
 }
 
 .wrapButtons{
@@ -58,7 +58,7 @@
 .wrapH2{
   width: 48%;
   margin-top: 1.2rem;
-  background-color: rgb(204, 200, 200);
+  background-color: var(--bgWrapCards);
   box-shadow: var(--boxShadow);
   padding: 0.5%;
 }

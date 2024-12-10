@@ -1,5 +1,6 @@
 .wrapArticle{
   background-color: white;
+  box-shadow: var(--boxShadow);
   margin: 2%;
   margin-bottom: 4%;
   border-radius: 10px;
@@ -46,15 +47,31 @@
 
 .h3Red{
   font-size: 1rem;
-  color: rgb(205, 45, 45);
+  color: rgb(128, 11, 11);
 }
 
 .h3Green{
   font-size: 1rem;
-  color: green;
+  color: rgb(7, 78, 7);
 }
 
 .h3Blue{
   font-size: 1rem;
-  color: rgb(11, 11, 155);
+  color: rgb(8, 8, 103);
+}
+
+.wrapH3{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrapArticle h3{
+  font-size: 0.9rem;
+}
+
+.wrapArticle p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }

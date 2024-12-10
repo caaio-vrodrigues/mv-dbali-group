@@ -60,7 +60,10 @@ const PreviewOrcamItem = ({
             <h2>Previsão de término</h2>
             <p>{formatDate(previsao_termino)}</p>
           </div>}
-        <h3 className={`${situacaoObra === 'em obra' ? styles.h3Red : situacaoObra === 'aguardando'? styles.h3Blue : styles.h3Green}`}>{situacaoObra}</h3>
+        <div className={styles.wrapH3}>
+          <h3>Status:</h3>
+          <p className={`${situacaoObra === 'em obra' ? styles.h3Red : situacaoObra === 'aguardando'? styles.h3Blue : styles.h3Green}`}>{situacaoObra}</p>
+        </div>
       </div>
     </article>
   );
