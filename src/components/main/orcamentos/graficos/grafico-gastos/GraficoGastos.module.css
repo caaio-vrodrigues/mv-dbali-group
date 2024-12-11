@@ -6,6 +6,7 @@
 .pieSegment:hover {
   transform: scale(1.02); /* Efeito de aumento ao passar o mouse */
   opacity: 0.8; /* Efeito de opacidade ao passar o mouse */
+  color: #8d7408;
 }
 
 .legenda {
@@ -17,7 +18,6 @@
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  
 }
 
 .circulo {

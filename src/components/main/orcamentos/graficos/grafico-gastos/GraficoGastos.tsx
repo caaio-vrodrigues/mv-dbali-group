@@ -77,9 +77,9 @@ export const GraficoGastos: React.FC<{ gastos: GastoProps }> = ({ gastos }) => {
   // Cores para os segmentos
   const colors = [
     '#1E90FF', // Gasto Material
-    '#4682B4', // Gasto Serviço
-    '#5F9EA0', // Gasto Combustível
-    '#6495ED', // Gasto Alimentação
+    '#187741', // Gasto Serviço
+    '#8b3535', // Gasto Combustível
+    '#8d7408', // Gasto Alimentação
     '#e8e6a0', // Disponível
   ];
 

@@ -67,29 +67,31 @@ export const Orcamento = ({ data }: TOrcamento) => {
           </button>
         </div>
       </div>
-      <h2>Emitido: 
-        <span className={styles.spanH2}>
-          {formatDate(data.data_emissao)}
-        </span>
-      </h2>
-      <h2>
-        Cliente: 
-        <span className={styles.spanH2}>
-          {data.cliente}
-        </span>
-      </h2>
-      <h2>
-        CNPJ: 
-        <span className={styles.spanH2}>
-          {data.cnpj_cliente}
-        </span>
-      </h2>
-      <h2>
-        Situação: 
-        <span className={styles.spanH2}>
-          {data.situacao_orcamento}
-        </span>
-      </h2>
+      <div className={styles.wrapH2InfosCliente}>
+        <h2>Emitido:
+          <span className={styles.spanH2}>
+            {formatDate(data.data_emissao)}
+          </span>
+        </h2>
+        <h2>
+          Cliente:
+          <span className={styles.spanH2}>
+            {data.cliente}
+          </span>
+        </h2>
+        <h2>
+          CNPJ:
+          <span className={styles.spanH2}>
+            {data.cnpj_cliente}
+          </span>
+        </h2>
+        <h2>
+          Situação:
+          <span className={styles.spanH2}>
+            {data.situacao_orcamento}
+          </span>
+        </h2>
+      </div>
       {data.situacao_orcamento === 'fechado' && 
         <div className={styles.contWrapH2}>
           <div className={styles.wrapH2}>

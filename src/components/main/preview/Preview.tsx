@@ -41,7 +41,7 @@ export const Preview = () => {
     <section className={`${styles.block} ${styles.blockRight}`}>
       <button 
         onClick={()=>setShowOrcamentos(!showOrcamentos)}
-        className={`${styles.buttonFloat}`}>
+        className={`${styles.buttonFloat} ${styles.buttonFloatRight}`}>
         Orçamentos
           <Image
             className={styles.arrowIcon}

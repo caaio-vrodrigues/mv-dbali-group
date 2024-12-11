@@ -15,14 +15,21 @@
 
 .wrapArticle h1{
   font-size: var(--fontSize-h1);
-  margin-bottom: 2%;
+  margin-bottom: 1rem;
   width: 80%;
 }
 
-.arrowForwardBlack{
-  width: 2rem;
+.infosBlack{
+  width: 1.3rem;
   height: 1.3rem;
   margin-left: auto;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: var(--boxShadow);
+}
+
+.infosBlack:hover{
+  background-color: rgb(195, 187, 187);
 }
 
 .contH2{
@@ -41,22 +48,22 @@
 }
 
 .wrapArticle p{
-  font-size: var(--pSize);
+  font-size: var(--fontSize-p);
   margin-left: 0.2rem;
 }
 
 .h3Red{
-  font-size: 1rem;
+  font-size: var(--fontSize-p);
   color: rgb(128, 11, 11);
 }
 
 .h3Green{
-  font-size: 1rem;
+  font-size: var(--fontSize-p);
   color: rgb(7, 78, 7);
 }
 
 .h3Blue{
-  font-size: 1rem;
+  font-size: var(--fontSize-p);
   color: rgb(8, 8, 103);
 }
 
@@ -66,12 +73,12 @@
 }
 
 .wrapArticle h3{
-  font-size: 0.9rem;
+  font-size: var(--fontSize-h2);
 }
 
 .wrapArticle p{
   display: flex;
   justify-content: center;
   align-items: center;
-  
+  font-size: var(--fontSize-p);
 }

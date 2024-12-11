@@ -17,7 +17,7 @@ export const PaymentsCards = () => {
         <article key={data.id} className={styles.wrapArticle}>
           <h1>{data.title}</h1>
           <div className={styles.wrapTotal}>
-            <h2>TOTAL</h2>
+            <h2>Total</h2>
             <p>R${data.value}</p>
           </div>
           {data.endPeriod && data.startPeriod ? 

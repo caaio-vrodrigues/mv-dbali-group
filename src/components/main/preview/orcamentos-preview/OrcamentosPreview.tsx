@@ -8,7 +8,7 @@ import styles from './OrcamentosPreview.module.css';
 import Image from 'next/image';
 
 // icon-image
-import arrowForwardBlack from '@/icon/arrow-forward-black.png';
+import infosBlack from '@/icon/info-black.png';
 
 // Definindo o tipo para os itens do orçamento
 type TPreviewOrcmItem = {
@@ -45,9 +45,9 @@ const PreviewOrcamItem = ({
       <div className={`${styles.contH1}`}>
         <h1>Orçamento nº {num_orcam} - <span>{obra}</span></h1>
         <Image 
-          src={arrowForwardBlack} 
+          src={infosBlack} 
           alt='Ícone para mais informações'
-          className={styles.arrowForwardBlack} />
+          className={styles.infosBlack} />
       </div>
       <div className={`${styles.contH2}`}>
         {inicio_execucao && 

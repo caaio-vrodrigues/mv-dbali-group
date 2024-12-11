@@ -5,7 +5,7 @@
   width: 26.5%;
   min-width: 9rem;
   padding: 0.5rem;
-  margin-top: 2rem;
+  margin-top: 2.6rem;
 }
 
 .wrapArticle h1{
@@ -17,7 +17,7 @@
 }
 
 .wrapArticle p{
-  font-size: var(--pSize);
+  font-size: var(--fontSize-p);
 }
 
 .wrapTotal{
