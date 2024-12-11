@@ -1,7 +1,7 @@
 // src/components/GraficoGastos.tsx
 
 import React from 'react';
-import styles from './GraficoGastos.module.css'; // Importando CSS Module
+import styles from './GraficoGastos.module.css';
 
 //utils
 import { formatMoeda } from '@/utils/formatMoeda';
@@ -17,6 +17,7 @@ type GastoProps = {
 
 export const GraficoGastos: React.FC<{ gastos: GastoProps }> = ({ gastos }) => {
   const {
+    valor_fechado,
     valor_estip_gasto,
     gasto_material_obra,
     gasto_servico_obra,
@@ -32,14 +33,20 @@ export const GraficoGastos: React.FC<{ gastos: GastoProps }> = ({ gastos }) => {
     GastoAlimentação: (gasto_alimentacao / valor_estip_gasto) * 100,
   };
 
-  // Cálculo do percentual restante disponível
+  // Cálculo do total de gastos
   const gastoTotal = gasto_material_obra + gasto_servico_obra +
     gasto_combustivel + gasto_alimentacao;
 
+  // Cálculo do percentual restante disponível
   const percentualDisponivel = 
     ((valor_estip_gasto - gastoTotal) / valor_estip_gasto) * 100;
 
   const valorDisponivel = valor_estip_gasto - gastoTotal;
+
+  // Cálculo do lucro atual
+  const lucroAtual = valor_fechado - gastoTotal; // Lucro pode ser negativo
+  // Cálculo da porcentagem de lucro
+  const percentualLucro = (lucroAtual / valor_fechado) * 100; // Pode ser negativo
 
   // Função para calcular os ângulos de cada segmento
   const calculateAngles = (
@@ -118,10 +125,9 @@ export const GraficoGastos: React.FC<{ gastos: GastoProps }> = ({ gastos }) => {
   ];
 
   return (
-    <div>
+    <>
       <svg
-        width="220"
-        height="220"
+        className={styles.svgGraphic}
         viewBox="0 0 220 220"
         aria-labelledby="graficoGastosTitle graficoGastosDesc"
       >
@@ -135,11 +141,12 @@ export const GraficoGastos: React.FC<{ gastos: GastoProps }> = ({ gastos }) => {
             key={index}
             d={createPath(angle[0], angle[1])}
             fill={colors[index]}
-            className={styles.pieSegment} // Classe do CSS Module
+            className={styles.pieSegment}
           />
         ))}
       </svg>
       <div className={styles.legenda}>
+        <h2>Lucro Atual: {formatMoeda(lucroAtual)} ({percentualLucro.toFixed(2)}%)</h2>
         <ul className={styles.listaLegenda}>
           {legendData.map((item, index) => (
             <li key={index}>
@@ -151,12 +158,12 @@ export const GraficoGastos: React.FC<{ gastos: GastoProps }> = ({ gastos }) => {
                 <h4>{`${item.label}: `}</h4>
               </div>
               <p>R$ {formatMoeda(item.realValue)}</p>
-              <p>{item.value.toFixed(2)}%</p>
+              <p className={styles.pPercent}>Percentual equivalente: {item.value.toFixed(2)}%</p>
             </li>
           ))}
         </ul>
         <h2>Gastos totais: {formatMoeda(gastoTotal)}</h2>
       </div>
-    </div>
+    </>
   );
 };

@@ -1,17 +1,11 @@
-//components
+// src/components/Orcamento.tsx
+
 import { GraficoGastos } from '../graficos/grafico-gastos/GraficoGastos';
-
-//styles
+import { GraficoTempo } from '../graficos/grafico-tempo/GraficoTempo';
 import styles from './Orcamento.module.css';
-
-//utils
 import { formatDate } from '@/utils/formatDate';
 import { formatMoeda } from '@/utils/formatMoeda';
-
-//image
 import Image from 'next/image';
-
-//icon-image
 import estoquewhite from '@/icon/estoque-white.png';
 import editwhite from '@/icon/edit-white.png';
 
@@ -48,7 +42,13 @@ export const Orcamento = ({ data }: TOrcamento) => {
     valor_fechado: data.valor_fechado
   };
 
-  return(
+  // Converter as datas para string usando formatDate
+  const dataGraficoTempo = {
+    dataInicio: data.inicio_execucao ? formatDate(data.inicio_execucao) : '', // Converte ou retorna uma string vazia se null
+    prazoTermino: data.previsao_termino ? formatDate(data.previsao_termino) : '', // Converte ou retorna uma string vazia se null
+  };
+
+  return (
     <article className={`${styles.artic}`}>
       <div className={styles.wrapH1AndButtons}>
         <h1>
@@ -58,12 +58,14 @@ export const Orcamento = ({ data }: TOrcamento) => {
           <button>
             <Image
               className={styles.IconsOrcamento}
-              src={estoquewhite} alt='Acesso ao estoque.'/>
+              src={estoquewhite} 
+              alt='Acesso ao estoque.'/>
           </button>
           <button>
             <Image
               className={styles.IconsOrcamento}
-              src={editwhite} alt='Editar orçamento.'/>
+              src={editwhite} 
+              alt='Editar orçamento.'/>
           </button>
         </div>
       </div>
@@ -124,6 +126,9 @@ export const Orcamento = ({ data }: TOrcamento) => {
                 {formatDate(data.previsao_termino)}
               </span>
             </h2>
+            <div className={styles.wrapGrafico}>
+              <GraficoTempo tempo={dataGraficoTempo}/>
+            </div>
           </div>
         </div>}
     </article>

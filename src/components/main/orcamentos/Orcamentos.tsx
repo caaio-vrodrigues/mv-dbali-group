@@ -52,7 +52,7 @@ export const Orcamentos = () => {
       </div>
       {visibleCount < orcamentosData.length && ( // Verifica se existem mais orçamentos para mostrar
         <button className={styles.butShowMore} onClick={showMore}>
-          Mostrar Mais
+         Mostrar mais +
         </button>
       )}
     </section>

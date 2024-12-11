@@ -1,7 +1,13 @@
 export const formatDate = (date) => {
   const d = new Date(date);
-  const year = d.getFullYear();
-  const month = (d.getMonth()).toString().padStart(2, '0'); // Adicionando 1 ao mês e garantindo dois dígitos
-  const day = d.getDate().toString().padStart(2, '0'); // Garantindo dois dígitos para o dia
-  return `${day}/${month}/${year}`;
+
+  // Obtém o ano, mês (0-indexado) e dia em UTC
+  const year = d.getUTCFullYear();
+  const month = d.getUTCMonth() + 1; // Adiciona 1 para que Janeiro seja 1 e Dezembro seja 12
+  const day = d.getUTCDate(); // Dia do mês em UTC
+
+  const verifyDay = day < 10 ? `0${day}` : day;
+  const verifyMonth = month < 10 ? `0${month}` : month;
+
+  return `${verifyDay}/${verifyMonth}/${year}`; // Retorna no formato dd/mm/yyyy
 };

@@ -37,14 +37,18 @@
 }
 
 .artic h1{
-  font-size: 1.1rem;
+  font-size: var(--fontSize-h1);
   width: 50%;
 }
 
 .artic h2{
-  font-size: 1rem;
+  font-size: var(--fontSize-h2);
   font-weight: 500;
   margin-top: 0.2rem;
+}
+
+.artic p{
+  font-size: var(--fontSize-p);
 }
 
 .wrapH2InfosCliente{
@@ -72,14 +76,21 @@
   padding: 0.5%;
 }
 
+.wrapH2 h2{
+  font-size: var(--fontSize-h2);
+}
+
 .spanH2{
-  font-size: 0.9rem;
+  font-size: var(--fontSize-p);
   font-weight: 400;
   margin-left: 0.3rem;
+}
+
+.wrapGrafico{
+  margin-top: 1rem;
 }
 
 .wrapGrafico svg{
   display: flex;
   margin-inline: auto;
-  margin-top: 5rem;
 }
