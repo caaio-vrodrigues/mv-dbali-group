@@ -1,3 +1,9 @@
+//hooks
+import { useState } from 'react';
+
+//components
+import { NavigationMenu } from '../navigation-menu/NavigationMenu';
+
 //img
 import Image from 'next/image';
 
@@ -10,11 +16,14 @@ import menuBurg from '@/icon/menu-burg.png';
 import styles from './IconsComp.module.css';
 
 export const IconsComp = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
   return(
     <div className={styles.iconsWrap}>
-      <button>
+      <button onClick={()=>setIsMenuOpen(!isMenuOpen)}>
         <Image src={menuBurg} alt='Menu de navegação'/>
       </button>
+      {isMenuOpen && <NavigationMenu onClose={setIsMenuOpen}/>}
       <button>
         <Image src={accountManage} alt='Account management'/>
       </button>

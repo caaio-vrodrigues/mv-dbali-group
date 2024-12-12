@@ -42,10 +42,9 @@ export const Orcamento = ({ data }: TOrcamento) => {
     valor_fechado: data.valor_fechado
   };
 
-  // Converter as datas para string usando formatDate
   const dataGraficoTempo = {
-    dataInicio: data.inicio_execucao ? formatDate(data.inicio_execucao) : '', // Converte ou retorna uma string vazia se null
-    prazoTermino: data.previsao_termino ? formatDate(data.previsao_termino) : '', // Converte ou retorna uma string vazia se null
+    dataInicio: data.inicio_execucao ? formatDate(data.inicio_execucao) : '',
+    prazoTermino: data.previsao_termino ? formatDate(data.previsao_termino) : '',
   };
 
   return (
@@ -55,18 +54,26 @@ export const Orcamento = ({ data }: TOrcamento) => {
           Orçamento nº {data.num_orcam} - <span>{data.obra}</span>
         </h1>
         <div className={styles.wrapButtons}>
-          <button>
-            <Image
-              className={styles.IconsOrcamento}
-              src={estoquewhite} 
-              alt='Acesso ao estoque.'/>
-          </button>
-          <button>
-            <Image
-              className={styles.IconsOrcamento}
-              src={editwhite} 
-              alt='Editar orçamento.'/>
-          </button>
+          <div className={styles.tooltipWrapper}>
+            <button>
+              <Image
+                className={styles.IconsOrcamento}
+                src={estoquewhite}
+                alt='Acesso ao estoque.'
+              />
+            </button>
+            <span className={styles.tooltip}>Estoque</span>
+          </div>
+          <div className={styles.tooltipWrapper}>
+            <button>
+              <Image
+                className={styles.IconsOrcamento}
+                src={editwhite}
+                alt='Editar orçamento.'
+              />
+            </button>
+            <span className={styles.tooltip}>Editar</span>
+          </div>
         </div>
       </div>
       <div className={styles.wrapH2InfosCliente}>
@@ -99,9 +106,9 @@ export const Orcamento = ({ data }: TOrcamento) => {
           <div className={styles.wrapH2}>
             <h2>
               Valor fechado: 
-                <span className={styles.spanH2}>
-                  {formatMoeda(data.valor_fechado)}
-                </span>
+              <span className={styles.spanH2}>
+                {formatMoeda(data.valor_fechado)}
+              </span>
             </h2>
             <h2>
               Custo estipulado: 

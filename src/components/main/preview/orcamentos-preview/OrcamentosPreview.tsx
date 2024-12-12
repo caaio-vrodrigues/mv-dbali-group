@@ -44,10 +44,15 @@ const PreviewOrcamItem = ({
     <article key={id} className={styles.wrapArticle}>
       <div className={`${styles.contH1}`}>
         <h1>Orçamento nº {num_orcam} - <span>{obra}</span></h1>
-        <Image 
-          src={infosBlack} 
-          alt='Ícone para mais informações'
-          className={styles.infosBlack} />
+        <div className={styles.tooltipWrapper}>
+          <button>
+            <Image
+              src={infosBlack}
+              alt='Ícone para mais informações'
+              className={styles.infosBlack} />
+          </button>
+          <span className={styles.tooltip}>Orçamento</span>
+        </div>
       </div>
       <div className={`${styles.contH2}`}>
         {inicio_execucao && 

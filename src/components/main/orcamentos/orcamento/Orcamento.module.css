@@ -14,12 +14,10 @@
 }
 
 .wrapH1AndButtons button{
-  margin-left: 1%;
   background-color: var(--bgButton);
   border-radius: 0.3rem;
   cursor: pointer;
   border: none;
-  padding-top: 0.4%;
 }
 
 .wrapH1AndButtons button:hover{
@@ -93,4 +91,37 @@
 .wrapGrafico svg{
   display: flex;
   margin-inline: auto;
+}
+
+/* Adicione estas regras ao seu 'Orcamento.module.css' */
+
+.tooltipWrapper {
+  position: relative; /* Para o posicionamento do tooltip */
+  display: inline-block; /* Para manter os botões alinhados horizontalmente */
+  margin-left: 0.3rem;
+}
+
+.tooltip {
+  visibility: hidden; /* Inicialmente escondido */
+  width: 2rem; /* Ajuste conforme necessário */
+  font-size: var(--fontSize-caixinhaTooltipe);
+  background-color: rgb(11, 11, 11); /* Cor do tooltip */
+  color: white; /* Cor do texto */
+  text-align: center; /* Centraliza o texto */
+  border-radius: 0.2rem; /* Bordas arredondadas */
+  padding: 0.2rem; /* Espaçamento interno */
+  position: absolute; /* Permite o posicionamento em relação ao botão */
+  z-index: 98; /* Garante que o tooltip fique acima de outros elementos */
+  bottom: 100%; /* Coloca o tooltip acima do botão */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translateX(-50%); /* Para centralizar em relação ao botão */
+  opacity: 0; /* Inicialmente invisível */
+  transition: visibility 0s, opacity 0.3s linear; /* Transição suave */
+  margin-bottom: 0.1rem;
+}
+
+.tooltipWrapper:hover .tooltip {
+  visibility: visible; /* Torna visível ao passar o mouse */
+  opacity: 1; /* Mostra o tooltip */
+  cursor: default; /* Estilo do cursor */
 }
