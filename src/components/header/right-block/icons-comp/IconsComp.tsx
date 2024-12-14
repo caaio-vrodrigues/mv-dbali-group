@@ -1,11 +1,11 @@
+//components
+import { CustomButton } from '@/utils/custom-button/CustomButton';
+
 //hooks
 import { useState } from 'react';
 
 //components
 import { NavigationMenu } from '../navigation-menu/NavigationMenu';
-
-//img
-import Image from 'next/image';
 
 //img-icon
 import logoutIcon from '@/icon/logout.png';
@@ -20,16 +20,26 @@ export const IconsComp = () => {
   
   return(
     <div className={styles.iconsWrap}>
-      <button onClick={()=>setIsMenuOpen(!isMenuOpen)}>
-        <Image src={menuBurg} alt='Menu de navegação'/>
-      </button>
+      <CustomButton 
+        altSrc='Menu de navegação'
+        img={menuBurg}
+        msgToolTipe='Menu'
+        styleImg=''
+        onClick={setIsMenuOpen}
+        tooltipPosisition='bottom'/>
       {isMenuOpen && <NavigationMenu onClose={setIsMenuOpen}/>}
-      <button>
-        <Image src={accountManage} alt='Account management'/>
-      </button>
-      <button>
-        <Image src={logoutIcon} alt='Logout icon'/>
-      </button>
+      <CustomButton 
+        altSrc='Configurações de conta'
+        img={accountManage}
+        msgToolTipe='Config. Conta'
+        styleImg=''
+        tooltipPosisition='bottom'/>
+      <CustomButton 
+        altSrc='Encerrar seção'
+        img={logoutIcon}
+        msgToolTipe='Sair'
+        styleImg=''
+        tooltipPosisition='bottom'/>
     </div>
   );
 };

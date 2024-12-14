@@ -13,6 +13,7 @@
   --bgWrapCards: rgb(204, 200, 200);
   --bgButton: rgb(52, 52, 50);
   --bgButtonHover: rgb(122, 115, 115);
+  --borderBox: 0.1rem solid rgba(0, 0, 0, 0.227);
   --boxShadow: 1px 0.1px 3px 0.1px black;
 }
 

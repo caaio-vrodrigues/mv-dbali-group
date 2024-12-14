@@ -1,0 +1,37 @@
+/* src/utils/tooltipe/Tooltipe.module.css */
+
+.tooltipWrapper {
+  position: relative; /* Para o posicionamento do tooltip */
+  display: inline-block; /* Para manter os botões alinhados horizontalmente */
+  margin-left: 0.3rem;
+}
+
+.tooltipWrapper button{
+  padding: 0.23rem;
+  padding-bottom: 0.05rem;
+}
+
+.tooltip {
+  width: auto; /* Ajusta automaticamente à largura do conteúdo */
+  font-size: var(--fontSize-caixinhaTooltipe);
+  background-color: rgb(11, 11, 11);
+  color: white;
+  text-align: center;
+  border-radius: 0.2rem; 
+  padding: 0.2rem;
+  position: absolute; /* Permite o posicionamento em relação ao botão */
+  z-index: 97;
+  bottom: 100%; /* Coloca o tooltip acima do botão */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translateX(-50%); /* Para centralizar em relação ao botão */
+  opacity: 1; /* Torna o tooltip visível */
+  transition: opacity 0.3s ease-in-out; /* Transição suave */
+  margin-bottom: 0.4rem;
+  pointer-events: none; /* Permite interações com o botão abaixo */
+}
+
+  .tooltipBottom{
+    top: 100%;
+    margin-top: 0.2rem;
+    height: fit-content;
+  }

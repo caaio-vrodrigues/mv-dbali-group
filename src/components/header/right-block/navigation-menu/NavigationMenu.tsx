@@ -1,6 +1,12 @@
 // src/components/navigation/NavigationMenu.tsx
 
-import React from 'react';
+//React
+import React, { useContext } from 'react';
+
+//context
+import ContextMaster from '@/context/ContextProvider';
+
+//styles
 import styles from './NavigationMenu.module.css';
 
 // Definindo a interface para as props do componente
@@ -9,13 +15,21 @@ interface NavigationMenuProps {
 }
 
 export const NavigationMenu: React.FC<NavigationMenuProps> = ({ onClose }) => {
+  const { setShowOrcamentos } = useContext(ContextMaster);
+
   return (
     <div className={styles.menu}>
-      <button className={styles.closeButton} onClick={() => onClose(false)}>Fechar</button>
+      <button className={styles.closeButton} onClick={() => onClose(false)}>X</button>
       <ul className={styles.menuList}>
-        <li><a href="#link1">Link 1</a></li>
-        <li><a href="#link2">Link 2</a></li>
-        <li><a href="#link3">Link 3</a></li>
+        <li>
+          <button onClick={() => {}}>Estoque</button>
+        </li>
+        <li>
+          <button onClick={() => setShowOrcamentos(true)}>Orçamentos</button>
+        </li>
+        <li>
+          <button onClick={() => {}}>Fluxo Pagamentos</button>
+        </li>
       </ul>
     </div>
   );

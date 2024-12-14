@@ -2,8 +2,8 @@
 
 .menu {
   position: absolute;
+  text-align: left;
   top: 3.7rem; /* Justamente abaixo do header */
-  right: 0;
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.227);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombras mais suaves */
@@ -22,27 +22,29 @@
   margin: 0.5rem 0; /* Espaçamento entre os itens */
 }
 
-.menuList li a {
+.menuList li button {
   text-decoration: none; /* Remove sublinhado */
   color: #333; /* Cor do texto */
   transition: color 0.2s; /* Transição suave na cor */
+  cursor: pointer;
 }
 
-.menuList li a:hover {
-  color: var(--primaryColor); /* Muda a cor ao passar o mouse */
+.menuList li button:hover {
+  color: rgb(183, 158, 21); /* Muda a cor ao passar o mouse */
 }
 
 .closeButton {
+  display: flex;
   background-color: transparent;
   border: none;
   cursor: pointer;
   font-size: 1rem;
-  margin-bottom: 0.5rem; /* Espaçamento abaixo do botão de fechar */
-  color: #d91414; /* Cor do texto do botão de fechar */
+  margin-left: auto !important;
+  color: #000000; /* Cor do texto do botão de fechar */
   font-weight: bold; /* Negrito para o botão de fechar */
   transition: color 0.2s;
 }
 
 .closeButton:hover {
-  color: #ff0000; /* Muda a cor ao passar o mouse */
+  color: #de4a4a; /* Muda a cor ao passar o mouse */
 }

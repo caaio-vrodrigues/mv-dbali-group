@@ -5,25 +5,16 @@ import { OrcamentosPreview } from './orcamentos-preview/OrcamentosPreview';
 // import { UpdateDataComponent } from '@/data/update/UpdateDataComponent';
 // import { GetDataComponent } from '@/data/get/GetDataComponent';
 
-
-
 //image
 import Image from 'next/image';
 
 // icon-img
 import arrowForwardWhite from '@/icon/arrow-forward-white.png';
 
-//data
-import React, { useContext } from 'react';
-
-//context
-import ContextMaster from '@/context/ContextProvider';
-
 //styles
 import styles from './Preview.module.css';
 
 export const Preview = () => {
-  const { showOrcamentos, setShowOrcamentos } = useContext(ContextMaster);
 
   return(<>
     <section className={`${styles.block} ${styles.blockLeft}`}>
@@ -39,15 +30,6 @@ export const Preview = () => {
       <PaymentsCards/>
     </section>
     <section className={`${styles.block} ${styles.blockRight}`}>
-      <button 
-        onClick={()=>setShowOrcamentos(!showOrcamentos)}
-        className={`${styles.buttonFloat} ${styles.buttonFloatRight}`}>
-        Orçamentos
-          <Image
-            className={styles.arrowIcon}
-            src={arrowForwardWhite}
-            alt='Flecha para a página Fluxo'/>
-      </button>
       <OrcamentosPreview/>
     </section>
     {/* <InsertDataComponent/> */}

@@ -22,6 +22,7 @@
 }
 
 .iconsWrap button img:hover{
+  transition: 0.2s;
   background-color: var(--bgButtonHover);
 }
 

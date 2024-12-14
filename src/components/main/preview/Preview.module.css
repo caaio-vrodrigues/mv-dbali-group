@@ -53,13 +53,6 @@
   padding: 0.3rem;
 }
 
-.buttonFloatRight{
-  border-radius: 5px;
-  border-end-start-radius: 0;
-  border-top-right-radius: 0;
-  border-top-left-radius: 10px;
-}
-
 .buttonFloat:hover{
   transition: 0.1s;
   background-color: var(--bgButtonHover);

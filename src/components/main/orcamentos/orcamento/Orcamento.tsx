@@ -1,11 +1,10 @@
 // src/components/Orcamento.tsx
-
+import { CustomButton } from '@/utils/custom-button/CustomButton';
 import { GraficoGastos } from '../graficos/grafico-gastos/GraficoGastos';
 import { GraficoTempo } from '../graficos/grafico-tempo/GraficoTempo';
 import styles from './Orcamento.module.css';
 import { formatDate } from '@/utils/formatDate';
 import { formatMoeda } from '@/utils/formatMoeda';
-import Image from 'next/image';
 import estoquewhite from '@/icon/estoque-white.png';
 import editwhite from '@/icon/edit-white.png';
 
@@ -54,26 +53,18 @@ export const Orcamento = ({ data }: TOrcamento) => {
           Orçamento nº {data.num_orcam} - <span>{data.obra}</span>
         </h1>
         <div className={styles.wrapButtons}>
-          <div className={styles.tooltipWrapper}>
-            <button>
-              <Image
-                className={styles.IconsOrcamento}
-                src={estoquewhite}
-                alt='Acesso ao estoque.'
-              />
-            </button>
-            <span className={styles.tooltip}>Estoque</span>
-          </div>
-          <div className={styles.tooltipWrapper}>
-            <button>
-              <Image
-                className={styles.IconsOrcamento}
-                src={editwhite}
-                alt='Editar orçamento.'
-              />
-            </button>
-            <span className={styles.tooltip}>Editar</span>
-          </div>
+          <CustomButton 
+            altSrc='Acesso ao estoque.'
+            img={estoquewhite}
+            msgToolTipe='Estoque'
+            styleImg={styles.IconsOrcamento}
+          />
+          <CustomButton 
+            altSrc='Editar orçamento.'
+            img={editwhite}
+            msgToolTipe='Editar'
+            styleImg={styles.IconsOrcamento}
+          />
         </div>
       </div>
       <div className={styles.wrapH2InfosCliente}>

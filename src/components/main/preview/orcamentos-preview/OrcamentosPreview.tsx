@@ -1,11 +1,10 @@
+import { CustomButton } from '@/utils/custom-button/CustomButton';
+
 // Data
 import { orcamentosData } from '@/data/dados-teste/orcamentos-data';
 
 // Styles
 import styles from './OrcamentosPreview.module.css';
-
-// Image
-import Image from 'next/image';
 
 // icon-image
 import infosBlack from '@/icon/info-black.png';
@@ -44,15 +43,11 @@ const PreviewOrcamItem = ({
     <article key={id} className={styles.wrapArticle}>
       <div className={`${styles.contH1}`}>
         <h1>Orçamento nº {num_orcam} - <span>{obra}</span></h1>
-        <div className={styles.tooltipWrapper}>
-          <button>
-            <Image
-              src={infosBlack}
-              alt='Ícone para mais informações'
-              className={styles.infosBlack} />
-          </button>
-          <span className={styles.tooltip}>Orçamento</span>
-        </div>
+        <CustomButton 
+          altSrc='Ícone para mais informações'
+          img={infosBlack}
+          msgToolTipe='Orçamento'
+          styleImg={styles.infosBlack}/>
       </div>
       <div className={`${styles.contH2}`}>
         {inicio_execucao && 
