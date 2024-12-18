@@ -3,7 +3,6 @@
 .tooltipWrapper {
   position: relative; /* Para o posicionamento do tooltip */
   display: inline-block; /* Para manter os botões alinhados horizontalmente */
-  margin-left: 0.3rem;
 }
 
 .tooltipWrapper button{

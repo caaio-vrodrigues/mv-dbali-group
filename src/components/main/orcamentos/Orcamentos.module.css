@@ -1,87 +1,14 @@
-.orcamentosContainer{
+.orcamentosContainer {
   width: 100%;
 }
 
-.WrapButtons_Add_Back{
-  display: flex;
-  width: 100%;
-}
-
-.WrapButtons_Add_Back button{
-  width: 2rem;
-  height: 2rem;
-  padding: 0;
-  border-radius: 50%;
-  border: none;
-  margin-right: 0.3rem;
-  cursor: pointer;
-  background-color: var(--bgButton);
-}
-
-.WrapButtons_Add_Back button:hover{
-  transition: 0.2s;
-  background-color: var(--bgButtonHover);
-}
-
-.wrapInput {
-  display: flex;
-  align-items: center;
-  min-width: 14rem;
-  padding: 0;
-}
-
-.wrapInput input {
-  background-color: var(--bgButton);
-  border-top-left-radius: 0.4rem;
-  border-bottom-left-radius: 0.4rem;
-  font-weight: 700;
-  border: none;
-  padding-left: 0.5rem;
-  flex-grow: 1;  /* Preenche o espaço disponível */
-  height: 94%;
-  margin: 0;
-  color: white;
-  font-size: 0.7rem;
-  font-weight: 100;
-}
-
-.wrapInput input::placeholder{
-  color: rgba(222, 217, 217, 0.792);
-  font-size: 0.7rem;
-  font-weight: 100;
-}
-
-.wrapInput button {
-  width: auto;
-  padding: 0;
-  width: 100%;
-  border-radius: 0;
-  border-top-right-radius: 0.4rem;
-  border-bottom-right-radius: 0.4rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--bgButton);
-}
-
-.lupa {
-  width: 1rem;
-  height: 1rem;
-}
-
-.butBackAdd{
-  width: 1rem;
-  height: 1rem;
-  margin-top: 10%;
-}
-
-.wrapOrcamentos{
+.wrapOrcamentos {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.butShowMore{
+.butShowMore {
   background-color: rgba(0, 0, 0, 0);
   border: none;
   padding-top: 1rem;

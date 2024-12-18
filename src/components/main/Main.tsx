@@ -4,6 +4,8 @@ import { useContext } from 'react';
 import { Preview } from './preview/Preview';
 import { Orcamentos } from './orcamentos/Orcamentos';
 import { Estoque } from './estoque/Estoque';
+import { Fornecedores } from './fornecedores/Fornecedores';
+import { FluxoPagamentos } from './fluxo-pagamentos/FluxoPagamentos';
 
 //context
 import ContextMaster from '@/context/ContextProvider';
@@ -12,7 +14,7 @@ import ContextMaster from '@/context/ContextProvider';
 import styles from './Main.module.css';
 
 export const Main = () => {
-  const { showEstoque } = useContext(ContextMaster);
+  const { showEstoque, showFornecedores, showFluxoPagamentos } = useContext(ContextMaster);
 
   return(
     <main className={`${styles.main}`}>
@@ -20,7 +22,8 @@ export const Main = () => {
         <Preview/>
       </div>
       <div className={`${styles.wrap}`}>
-        {showEstoque ? <Estoque/> : <Orcamentos/>}
+        {showEstoque ? <Estoque/> : showFornecedores 
+          ? <Fornecedores/> : showFluxoPagamentos ? <FluxoPagamentos/> : <Orcamentos/>}
       </div>
     </main>
   );

@@ -2,7 +2,7 @@
   background-color: white;
   border-radius: 10px;
   box-shadow: var(--boxShadow);
-  margin-top: 1rem;
+  margin-top: 2rem;
   padding: 1%;
   border-radius: 0.5rem;
   height: fit-content;
@@ -18,6 +18,7 @@
   border-radius: 0.3rem;
   cursor: pointer;
   border: none;
+  margin-left: 0.3rem;
 }
 
 .wrapH1AndButtons button:hover{

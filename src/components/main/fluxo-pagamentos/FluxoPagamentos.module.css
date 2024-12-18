@@ -1,0 +1,31 @@
+
+.secFluxoPagamentos{
+  width: 100%;
+}
+
+.wrapUl{
+  margin-top: 2rem;
+}
+
+.wrapUl ul{
+  list-style: none;
+  padding-left: 0;
+}
+
+.wrapUl li{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  border: var(--borderBox);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.wrapUl article{
+  border: var(--borderBox);
+  width: 25rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  /* margin-right: 1rem; */
+}

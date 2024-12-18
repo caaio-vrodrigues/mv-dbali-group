@@ -1,3 +1,95 @@
-.test{
-  border: var(--borderBox);
+.secEstoque {
+  width: 100%;
+}
+
+.secEstoque h1 {
+  margin-bottom: 2rem;
+}
+
+.superWrapButtons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.wrapButtonsRight button {
+  margin-left: 1rem;
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+  background-color: var(--bgButton);
+  color: white;
+  cursor: pointer;
+  font-size: var(--fontSize-p);
+}
+
+.wrapButtonsRight button:hover {
+  transition: background-color 0.3s; /* Transição suave ao passar o mouse */
+  background-color: #333; /* Cor mais escura ao passar o mouse */
+}
+
+.customButton {
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border-radius: 50%;
+  border: none;
+  margin-right: 0.3rem;
+  cursor: pointer;
+  background-color: var(--bgButton);
+}
+
+.imgIconBack {
+  width: 1rem;
+  height: 1rem;
+}
+
+.secEstoque table {
+  width: 100%;
+  border-collapse: collapse; /* Remove espaçamento entre as células */
+  margin-top: 1rem; /* Adiciona espaço acima da tabela */
+}
+
+.secEstoque thead th {
+  background-color: var(--bgWrapCards);
+  color: black;
+  padding: 0.5rem; /* Aumenta o padding para cabeçalhos */
+  text-align: left; /* Alinha texto à esquerda */
+  border-bottom: 2px solid #ddd; /* Borda inferior para separação */
+}
+
+.secEstoque tbody tr {
+  transition: background-color 0.3s; /* Transição suave para hover */
+}
+
+.secEstoque tbody tr:hover {
+  background-color: #f5f5f5; /* Cor de fundo ao passar o mouse */
+}
+
+.secEstoque tbody td {
+  padding: 0.5rem; /* Espaciamento uniforme nas células */
+  border-bottom: 1px solid #ddd; /* Borda inferior em células */
+}
+
+.inpNumb{
+  width: 4rem;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+  .wrapButtonsRight {
+    flex-direction: column; /* Alinha os botões verticalmente em telas pequenas */
+    margin-top: 1rem; /* Adiciona espaço acima dos botões */
+  }
+
+  .wrapButtonsRight button {
+    margin-left: 0; /* Remove margem esquerda */
+    margin-bottom: 0.5rem; /* Adiciona espaço entre os botões */
+    width: 100%; /* Faz os botões ocuparem toda a largura disponível */
+  }
+
+  .secEstoque table {
+    display: block; /* Permite rolagem horizontal em telas menores */
+    overflow-x: auto; /* Adiciona rolagem horizontal */
+  }
 }

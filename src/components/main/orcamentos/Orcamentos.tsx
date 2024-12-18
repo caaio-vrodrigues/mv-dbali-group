@@ -1,11 +1,9 @@
 //hooks
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 
 // components
 import { Orcamento } from './orcamento/Orcamento';
-
-// context
-import ContextMaster from '@/context/ContextProvider';
+import { ControlsElements } from '@/utils/controls-elements/ControlsElements';
 
 // styles
 import styles from './Orcamentos.module.css';
@@ -13,42 +11,45 @@ import styles from './Orcamentos.module.css';
 // data-test
 import { orcamentosData } from '@/data/dados-teste/orcamentos-data';
 
-// image
-import Image from 'next/image';
-
-// img-icon
-import arrowBackBlack from '@/icon/arrow-back-white.png';
-import addBlack from '@/icon/add-white.png';
-import lupaWhite from '@/icon/lupa-white.png';
-
 export const Orcamentos = () => {
-  const { showOrcamentos, setShowOrcamentos } = useContext(ContextMaster);
   const [visibleCount, setVisibleCount] = useState(3); // Estado para contar os orçamentos visíveis
+  const [showOrcamento, setShowOrcamentos] = useState(true);
+  const [searchTerm, setSearchTerm] = useState(''); // Estado para armazenar o termo de busca
 
   const showMore = () => {
     setVisibleCount((prevCount) => prevCount + 3); // Aumenta o contador em 3 a cada clique
   };
 
+  // Implementação das funções passadas para ControlsElements
+  const funcBack = (value: boolean) => {
+    setShowOrcamentos(value);
+  };
+
+  const funcAdd = () => { 
+    console.log("Adicionar novo orçamento");
+  };
+
+  const funcSearch = (value: string) => { // Garantindo que o tipo é string
+    setSearchTerm(value);
+    console.log("Buscando por:", value);
+    console.log(showOrcamento)
+    // Aqui você pode implementar a lógica de busca
+  };
+
   return (
     <section className={`${styles.orcamentosContainer}`}>
-      <div className={`${styles.WrapButtons_Add_Back}`}>
-        <button onClick={() => setShowOrcamentos(!showOrcamentos)}>
-          <Image className={styles.butBackAdd} src={arrowBackBlack} alt='Seta para voltar ao layout anterior.' />
-        </button>
-        <button onClick={() => setShowOrcamentos(!showOrcamentos)}>
-          <Image className={styles.butBackAdd} src={addBlack} alt='Adicionar novo orçamento.' />
-        </button>
-        <div className={styles.wrapInput}>
-          <input type="text" placeholder='Buscar orçamento' />
-          <button onClick={() => {}}>
-            <Image className={styles.lupa} src={lupaWhite} alt='Buscar orçamento.' />
-          </button>
-        </div>
-      </div>
+      <ControlsElements 
+        funcBack={funcBack} 
+        funcAdd={funcAdd} 
+        funcSearch={funcSearch} 
+      /> 
       <div className={`${styles.wrapOrcamentos}`}>
-        {orcamentosData.slice(0, visibleCount).map((data) => {
-          return (<Orcamento key={data.id} data={data} />);
-        })}
+        {orcamentosData
+          .filter(data => data.cliente.includes(searchTerm)) // Acessando a propriedade 'cliente' (ajuste conforme necessário)
+          .slice(0, visibleCount)
+          .map((data) => (
+            <Orcamento key={data.id} data={data} />
+          ))}
       </div>
       {visibleCount < orcamentosData.length && ( // Verifica se existem mais orçamentos para mostrar
         <button className={styles.butShowMore} onClick={showMore}>

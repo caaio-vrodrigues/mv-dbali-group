@@ -29,10 +29,14 @@ type TContextMasterProvider = {
 };
 
 type TContextMaster = {
+  showFluxoPagamentos: boolean;
+  showFornecedores: boolean;
   showEstoque: boolean;
   showOrcamentos: boolean;
   dataTblFluxoPagamentos: IFluxoPagamentos[] | null;
   dataTblTest: ITestData[] | null;
+  setShowFluxoPagamentos: React.Dispatch<boolean>;
+  setShowFornecedores: React.Dispatch<boolean>;
   setShowEstoque: React.Dispatch<boolean>;
   setShowOrcamentos: React.Dispatch<boolean>;
   setDataTblFluxoPagamentos: React.Dispatch<React.SetStateAction<IFluxoPagamentos[] | null>>;
@@ -40,14 +44,18 @@ type TContextMaster = {
 };
 
 const ContextMaster = createContext<TContextMaster>({
+  showFluxoPagamentos: false,
+  showFornecedores: false,
   showEstoque: false,
   showOrcamentos: false,
   dataTblFluxoPagamentos: null,
   dataTblTest: null,
-  setShowEstoque: () => {},
-  setShowOrcamentos: () => {},
-  setDataTblFluxoPagamentos: () => {},
-  setDataTblTest: () => {},
+  setShowFluxoPagamentos: ()=>{},
+  setShowFornecedores: ()=>{},
+  setShowEstoque: ()=>{},
+  setShowOrcamentos: ()=>{},
+  setDataTblFluxoPagamentos: ()=>{},
+  setDataTblTest: ()=>{},
 });
 
 export default ContextMaster;
@@ -58,15 +66,19 @@ export function ContextMasterProvider({ children }: TContextMasterProvider): Rea
   const [dataTblTest, setDataTblTest] = useState<ITestData[] | null>(null);
 
   //programa
+  const [showFluxoPagamentos, setShowFluxoPagamentos] = useState<boolean>(false);
   const [showOrcamentos, setShowOrcamentos] = useState<boolean>(false);
   const [showEstoque, setShowEstoque] = useState<boolean>(false);
+  const [showFornecedores, setShowFornecedores] = useState<boolean>(false);
 
   return (
     <ContextMaster.Provider value={{
+      showFluxoPagamentos, setShowFluxoPagamentos,
       dataTblFluxoPagamentos, setDataTblFluxoPagamentos,
       dataTblTest, setDataTblTest,
       showOrcamentos, setShowOrcamentos,
       showEstoque, setShowEstoque,
+      showFornecedores, setShowFornecedores
     }}>
       {children}
     </ContextMaster.Provider>
