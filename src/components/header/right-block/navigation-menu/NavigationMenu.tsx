@@ -32,6 +32,14 @@ export const NavigationMenu: React.FC<NavigationMenuProps> = ({ onClose }) => {
         </li>
         <li>
           <button onClick={() => {
+            setShowOrcamentos(true);
+            setShowEstoque(false);
+            setShowFornecedores(false);
+            setShowFluxoPagamentos(true);
+          }}>Fluxo Pagamentos</button>
+        </li>
+        <li>
+          <button onClick={() => {
               setShowEstoque(true);
               setShowOrcamentos(false);
               setShowFornecedores(false);
@@ -101,14 +109,6 @@ export const NavigationMenu: React.FC<NavigationMenuProps> = ({ onClose }) => {
               setShowFluxoPagamentos(false);
             }
           }>Contratos</button>
-        </li>
-        <li>
-          <button onClick={() => {
-            setShowOrcamentos(true);
-            setShowEstoque(false);
-            setShowFornecedores(false);
-            setShowFluxoPagamentos(true);
-          }}>Fluxo Pagamentos</button>
         </li>
       </ul>
     </div>

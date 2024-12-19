@@ -9,12 +9,15 @@
   --fontSize-h2: 0.9rem;
   --fontSize-p: 0.85rem;
   --fontSize-caixinhaTooltipe: 0.5rem;
+  --bgWhite: rgb(251, 247, 247);
   --bgColor: rgb(119, 121, 126);
   --bgWrapCards: rgb(204, 200, 200);
   --bgButton: rgb(52, 52, 50);
   --bgButtonHover: rgb(122, 115, 115);
   --borderBox: 0.1rem solid rgba(0, 0, 0, 0.227);
   --boxShadow: 1px 0.1px 3px 0.1px black;
+  --boxShadowGreen: 1px 0.1px 3px 0.1px rgb(16, 177, 70);
+  --boxShadowRed: 1px 0.1px 3px 0.1px rgb(168, 14, 14);
 }
 
 html{
@@ -24,7 +27,7 @@ html{
   padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6, p, div, article, main, span, link{
+*{
   margin: 0;
   padding: 0;
 }

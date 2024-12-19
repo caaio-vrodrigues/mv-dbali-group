@@ -1,0 +1,71 @@
+.wrapAddLanc {
+  font-size: var(--fontSize-p);
+  max-width: 500px; /* Largura máxima do formulário */
+  margin: 20px auto; /* Centraliza o formulário horizontalmente */
+  padding: 20px; /* Espaçamento interno */
+  border: 1px solid #ccc; /* Bordas do formulário */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra leve para profundidade */
+  background-color: #f9f9f9; /* Cor de fundo */
+}
+
+.title {
+  text-align: center; /* Centraliza o título */
+  color: #333; /* Cor do texto */
+  font-size: var(--fontSize-p);
+}
+
+.formGroup {
+  margin-bottom: 15px; /* Espaçamento entre os grupos de formulário */
+  font-size: var(--fontSize-p);
+}
+
+.wrapAddLanc label {
+  display: block; /* Faz o rótulo ocupar toda a linha */
+  margin-bottom: 5px; /* Espaçamento abaixo do rótulo */
+  font-weight: bold; /* Negrito para os rótulos */
+  color: #555; /* Cor do rótulo */
+  font-size: var(--fontSize-p);
+}
+
+/* Estilização para select e inputs */
+.wrapAddLanc select,
+.wrapAddLanc input[type="number"],
+.wrapAddLanc input[type="date"],
+.wrapAddLanc textarea { /* Incluindo textarea aqui */
+  width: 100%; /* Largura total do campo */
+  padding: 8px; /* Reduzido para 8px para evitar extrapolamento */
+  border: 1px solid #ccc; /* Bordas do campo */
+  border-radius: 4px; /* Bordas arredondadas */
+  font-size: var(--fontSize-p); /* Tamanho da fonte */
+  box-sizing: border-box; /* Inclui padding e borda na largura total */
+  transition: border-color 0.3s; /* Transição suave para a cor da borda */
+}
+
+.wrapAddLanc select:focus,
+.wrapAddLanc input[type="number"]:focus,
+.wrapAddLanc input[type="date"]:focus,
+.wrapAddLanc textarea:focus {
+  border-color: #007bff; /* Borda azul ao focar */
+  outline: none; /* Remove a borda padrão */
+}
+
+.submitButton {
+  width: 100%; /* Largura total do botão */
+  padding: 10px; /* Espaçamento interno */
+  background-color: #28a745; /* Cor de fundo verde */
+  color: white; /* Cor do texto */
+  border: none; /* Sem borda */
+  border-radius: 4px; /* Bordas arredondadas */
+  font-size: var(--fontSize-p); /* Tamanho da fonte */
+  cursor: pointer; /* Cursor de ponteiro ao passar sobre o botão */
+  transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+}
+
+.submitButton:hover {
+  background-color: #218838; /* Cor do botão ao passar o mouse */
+}
+
+.submitButton:active {
+  background-color: #1e7e34; /* Cor do botão ao clicar */
+}

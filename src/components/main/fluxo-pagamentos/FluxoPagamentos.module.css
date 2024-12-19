@@ -3,8 +3,26 @@
   width: 100%;
 }
 
+.buttonPath{
+  display: flex;
+  width: fit-content;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  cursor: pointer;
+  margin-top: 0.2rem;
+}
+
+.buttonPath:hover{
+  color: rgb(12, 130, 130);
+}
+
+.secFluxoPagamentos h1{
+  margin-top: 2rem;
+}
+
 .wrapUl{
   margin-top: 2rem;
+  font-size: var(--fontSize-p);
 }
 
 .wrapUl ul{
@@ -13,19 +31,93 @@
 }
 
 .wrapUl li{
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
   margin-bottom: 2rem;
-  border: var(--borderBox);
+  background-color: var(--bgWrapCards);
+  box-shadow: var(--boxShadow);
   padding: 1rem;
   border-radius: 0.5rem;
 }
 
-.wrapUl article{
-  border: var(--borderBox);
-  width: 25rem;
+.wrapInfosDia{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.wrapInfosDia h2{
+  font-size: var(--fontSize-p);
+}
+
+.wrapArticles{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.wrapBeneficiarioInfos{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.wrapCnpj{
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonPdf{
+  display: flex;
+  align-items: center;
+  padding: 0 !important;
+  margin: 0;
+  margin-left: 0.2rem;
+  border: none;
+  cursor: pointer;
+}
+
+.pdfBoletoIcon{
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.wrapBeneficiarioInfos h3{
+  display: flex;
+  align-items: center;
+  font-size: var(--fontSize-p);
+}
+
+.wrapSituacao{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+.situacaoImg{
+  width: 2rem;
+  height: 2rem;
+}
+
+.wrapPagadorInfos h3{
+  display: flex;
+  align-items: center;
+  font-size: var(--fontSize-p);
+}
+
+.wrapPagadorInfos h4{
+  font-weight: 400;
+}
+
+.wrapPagadorInfos p{
+  font-size: var(--fontSize-p);
+}
+
+.wrapArticles article{
+  background-color: var(--bgWhite);
+  box-shadow: var(--boxShadow);
+  width: 14%;
+  min-width: 15rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
-  /* margin-right: 1rem; */
 }
